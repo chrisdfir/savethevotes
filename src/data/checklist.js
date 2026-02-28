@@ -21,7 +21,7 @@ export const checklistSteps = [
   {
     title: "Get your birth certificate if missing",
     description:
-      "Order from the vital records office in the state where you were born. Costs $7\u2013$38 depending on the state; processing takes 2\u20136 weeks.",
+      "Order from the vital records office in the state where you were born. Costs $9\u2013$34 depending on the state; processing takes 1\u201312 weeks.",
     url: "https://www.usa.gov/birth-certificate",
     urlLabel: "Order at USA.gov",
   },
