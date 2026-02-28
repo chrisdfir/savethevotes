@@ -166,7 +166,7 @@ export default function DocumentCards() {
           Important Note for Married / Name-Changed Voters
         </p>
         <p className="text-text-secondary leading-relaxed">
-          Roughly <a href="https://www.brennancenter.org/our-work/research-reports/challenge-obtaining-voter-identification" target="_blank" rel="noopener noreferrer" className="text-danger-light hover:underline">84% of married women</a> in the U.S. change their surname. The
+          Roughly <a href="https://www.pewresearch.org/short-reads/2023/09/07/about-eight-in-ten-women-in-opposite-sex-marriages-say-they-took-their-husbands-last-name/" target="_blank" rel="noopener noreferrer" className="text-danger-light hover:underline">84% of married women</a> in the U.S. change their surname. The
           SAVE Act does not explicitly mention marriage certificates as
           acceptable proof of citizenship. If your current legal name differs
           from the name on your birth certificate, a{" "}

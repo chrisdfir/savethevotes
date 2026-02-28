@@ -3,12 +3,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 const facts = [
-  { stat: "146M", label: "Americans without a valid passport", sub: "153M voted in 2024", source: "State Dept. & Census Bureau", sourceUrl: "https://travel.state.gov/content/travel/en/about-us/reports-and-statistics.html" },
-  { stat: "~21M", label: "Adults without easy access to citizenship docs", sub: "Brennan Center for Justice", sourceUrl: "https://www.brennancenter.org/our-work/research-reports/citizens-without-proof" },
+  { stat: "~150M+", label: "Americans without a valid passport", sub: "~156M voted in 2024 (FEC)", source: "State Dept. & FEC", sourceUrl: "https://travel.state.gov/content/travel/en/about-us/reports-and-statistics.html" },
+  { stat: "~21M", label: "Adults without easy access to citizenship docs", sub: "Brennan Center / SSRS (2024)", sourceUrl: "https://www.brennancenter.org/our-work/analysis-opinion/213-million-american-citizens-voting-age-dont-have-ready-access" },
   { stat: "0.0001%", label: "Rate of suspected noncitizen voting", sub: "Federal and state audits", sourceUrl: "https://www.brennancenter.org/our-work/research-reports/noncitizen-voting-missing-millions" },
   { stat: "31,000+", label: "Eligible citizens blocked in Kansas", sub: "Similar law tested 2013–2018", source: "Fish v. Kobach ruling", sourceUrl: "https://www.aclu.org/cases/fish-v-schwab-formerly-fish-v-kobach" },
-  { stat: "84%", label: "of married women who change their surname", sub: "~69M may have name mismatch on birth cert", source: "Census Bureau", sourceUrl: "https://www.brennancenter.org/our-work/research-reports/challenge-obtaining-voter-identification" },
-  { stat: "4", label: "States currently require proof of citizenship", sub: "AZ, NH, OH (BMV only), WY", source: "NCSL", sourceUrl: "https://www.ncsl.org/elections-and-campaigns/voter-id" },
+  { stat: "84%", label: "of married women who change their surname", sub: "~69M may have name mismatch on birth cert", source: "Pew Research Center (2023)", sourceUrl: "https://www.pewresearch.org/short-reads/2023/09/07/about-eight-in-ten-women-in-opposite-sex-marriages-say-they-took-their-husbands-last-name/" },
+  { stat: "4", label: "States currently require proof of citizenship", sub: "AZ, NH, OH (BMV only), WY", source: "NCSL", sourceUrl: "https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote" },
 ];
 
 const container = {
