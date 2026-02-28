@@ -34,6 +34,28 @@ export const metadata = {
   openGraph: {
     siteName: "Save the Votes",
     type: "website",
+    url: "https://savethevotes.org",
+    title: "Save the Votes — Citizen Preparedness Resource",
+    description:
+      "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides for all 50 states.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Save the Votes — Citizen Preparedness Resource",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Save the Votes — Citizen Preparedness Resource",
+    description:
+      "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides for all 50 states.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://savethevotes.org",
   },
   robots: {
     index: true,
