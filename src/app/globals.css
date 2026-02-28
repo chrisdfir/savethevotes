@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts - will be set by next/font CSS variables in layout */
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Brand colors */
+  --color-accent: #3b82f6;
+  --color-accent-dark: #1d4ed8;
+  --color-accent-light: #60a5fa;
+  --color-danger: #dc2626;
+  --color-danger-light: #f87171;
+  --color-success: #16a34a;
+  --color-success-light: #4ade80;
+  --color-warning: #fbbf24;
+
+  /* Map legend colors */
+  --color-map-active: #ef4444;
+  --color-map-onbooks: #f59e0b;
+  --color-map-none: #94a3b8;
+
+  /* Semantic colors - light theme defaults */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
+  --color-border: rgba(148, 163, 184, 0.2);
+  --color-border-strong: rgba(148, 163, 184, 0.4);
+}
+
+/* Dark theme overrides */
+.dark {
+  --color-map-active: #f87171;
+  --color-map-onbooks: #fbbf24;
+  --color-map-none: #475569;
+
+  --color-surface: #0a0f1a;
+  --color-surface-alt: #0f172a;
+  --color-surface-elevated: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-border: rgba(71, 85, 105, 0.25);
+  --color-border-strong: rgba(71, 85, 105, 0.5);
+}
+
+/* Smooth theme transitions */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* Skip-to-content link (a11y) */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem;
+  background: var(--color-accent);
+  color: white;
+  font-weight: 700;
+}
+.skip-to-content:focus {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}

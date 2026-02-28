@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "WebSearch",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "Bash(true:*)",
+      "Bash(tail:*)",
+      "Bash(cd C:/dev/savethevote && node -e \"const {stateData} = require\\('./src/data/states.js'\\); console.log\\(Object.keys\\(stateData\\).length\\)\" 2>&1 || node -e \"import\\('./src/data/states.js'\\).then\\(m => console.log\\(Object.keys\\(m.stateData\\).length\\)\\)\" 2>&1)",
+      "Bash(cd C:/dev/savethevote && ls src/data/ && node -e \"const {stateData} = require\\('./src/data/states.js'\\)\" 2>&1 || node -e \"import\\('./src/data/states.js'\\).then\\(m => console.log\\(Object.keys\\(m.stateData\\).length\\)\\)\" 2>&1)",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__list_pages",
+      "Bash(cd C:/dev/savethevote && npm run build 2>&1)",
+      "Bash(cd /c/dev/savethevote && npm run build 2>&1)",
+      "Bash(echo Removed:*)",
+      "mcp__chrome-devtools__new_page",
+      "Bash(tasklist:*)",
+      "Bash(start:*)",
+      "Bash(head:*)",
+      "Bash(cd C:/dev/savethevote && npm ls tailwindcss @tailwindcss/postcss 2>&1)",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__press_key",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__emulate",
+      "mcp__chrome-devtools__take_snapshot",
+      "Bash(gh repo:*)",
+      "Bash(gh.exe repo:*)",
+      "Bash(echo gh CLI not found:*)",
+      "Bash(echo gh not found anywhere:*)",
+      "Bash(winget install:*)",
+      "Bash(export PATH=\"/c/Program Files/GitHub CLI:$PATH\" && gh auth status 2>&1)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth:*)"
+    ]
+  }
+}
