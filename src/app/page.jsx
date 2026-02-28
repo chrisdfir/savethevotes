@@ -1,7 +1,9 @@
 import Hero from "@/components/Hero";
+import ActionChecklist from "@/components/ActionChecklist";
 import USMap from "@/components/USMap";
 import StateSelector from "@/components/StateSelector";
 import DocumentCards from "@/components/DocumentCards";
+import SpecialSituations from "@/components/SpecialSituations";
 import FactsGrid from "@/components/FactsGrid";
 import Timeline from "@/components/Timeline";
 import ActionSection from "@/components/ActionSection";
@@ -11,6 +13,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <ActionChecklist />
+      <SectionDivider />
       <section className="max-w-5xl mx-auto px-6 py-12">
         <h2 className="font-serif text-3xl text-text mb-2">Explore Your State</h2>
         <p className="text-text-secondary mb-8">
@@ -32,6 +36,8 @@ export default function Home() {
       </section>
       <SectionDivider />
       <DocumentCards />
+      <SectionDivider />
+      <SpecialSituations />
       <SectionDivider />
       <FactsGrid />
       <SectionDivider />
