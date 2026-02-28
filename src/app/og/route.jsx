@@ -29,7 +29,7 @@ export async function GET() {
           <div
             style={{
               fontFamily: "monospace",
-              fontSize: "18px",
+              fontSize: "22px",
               fontWeight: 700,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -43,7 +43,7 @@ export async function GET() {
           <div
             style={{
               fontFamily: "Georgia, serif",
-              fontSize: "72px",
+              fontSize: "88px",
               fontWeight: 400,
               lineHeight: 1.05,
               color: "#f1f5f9",
@@ -56,7 +56,7 @@ export async function GET() {
           <div
             style={{
               fontFamily: "monospace",
-              fontSize: "16px",
+              fontSize: "18px",
               fontWeight: 700,
               letterSpacing: "0.15em",
               textTransform: "uppercase",
@@ -69,7 +69,7 @@ export async function GET() {
           {/* Value prop */}
           <div
             style={{
-              fontSize: "22px",
+              fontSize: "26px",
               lineHeight: 1.5,
               color: "#94a3b8",
               maxWidth: "540px",
@@ -101,8 +101,8 @@ export async function GET() {
         >
           {/* Large shield logo */}
           <svg
-            width="220"
-            height="220"
+            width="320"
+            height="320"
             viewBox="0 0 64 64"
             fill="none"
             style={{ opacity: 0.85 }}
@@ -116,7 +116,7 @@ export async function GET() {
               fill="rgba(255,255,255,0.2)"
             />
             <path
-              d="M28 34l-6-6 2.8-2.8L28 28.4l11.2-11.2L42 20 28 34z"
+              d="M28 44l-8-8 3.5-3.5L28 37l13-13L44.5 27.5 28 44z"
               fill="white"
             />
           </svg>
