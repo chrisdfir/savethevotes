@@ -3,11 +3,11 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 const facts = [
-  { stat: "146M", label: "Americans without a valid passport", sub: "153M voted in 2024", source: "State Dept. & Census Bureau", sourceUrl: "https://travel.state.gov/content/travel/en/about/reports-and-statistics.html" },
+  { stat: "146M", label: "Americans without a valid passport", sub: "153M voted in 2024", source: "State Dept. & Census Bureau", sourceUrl: "https://travel.state.gov/content/travel/en/about-us/reports-and-statistics.html" },
   { stat: "~21M", label: "Adults without easy access to citizenship docs", sub: "Brennan Center for Justice", sourceUrl: "https://www.brennancenter.org/our-work/research-reports/citizens-without-proof" },
   { stat: "0.0001%", label: "Rate of suspected noncitizen voting", sub: "Federal and state audits", sourceUrl: "https://www.brennancenter.org/our-work/research-reports/noncitizen-voting-missing-millions" },
-  { stat: "31,000+", label: "Eligible citizens blocked in Kansas", sub: "Similar law tested 2013–2018", source: "Fish v. Kobach ruling", sourceUrl: "https://www.aclu.org/cases/fish-v-kobach" },
-  { stat: "84%", label: "of married women who change their surname", sub: "~69M may have name mismatch on birth cert", source: "Census Bureau", sourceUrl: "https://www.census.gov/library/stories/2023/02/unique-aspects-women-marriage-702702.html" },
+  { stat: "31,000+", label: "Eligible citizens blocked in Kansas", sub: "Similar law tested 2013–2018", source: "Fish v. Kobach ruling", sourceUrl: "https://www.aclu.org/cases/fish-v-schwab-formerly-fish-v-kobach" },
+  { stat: "84%", label: "of married women who change their surname", sub: "~69M may have name mismatch on birth cert", source: "Census Bureau", sourceUrl: "https://www.brennancenter.org/our-work/research-reports/challenge-obtaining-voter-identification" },
   { stat: "4", label: "States currently require proof of citizenship", sub: "AZ, NH, OH (BMV only), WY", source: "NCSL", sourceUrl: "https://www.ncsl.org/elections-and-campaigns/voter-id" },
 ];
 
