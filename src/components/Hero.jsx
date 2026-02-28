@@ -1,6 +1,7 @@
 "use client";
 import { motion, useReducedMotion } from "framer-motion";
 import StatusBadge from "@/components/ui/StatusBadge";
+import ShareButtons from "@/components/ShareButtons";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -64,6 +65,13 @@ export default function Hero() {
         >
           <StatusBadge active={true} label="Passed House Feb 11, 2026" />
           <StatusBadge active={false} label="Senate vote pending" />
+        </motion.div>
+
+        <motion.div
+          variants={item}
+          className="mt-8 flex justify-center"
+        >
+          <ShareButtons />
         </motion.div>
       </motion.div>
     </header>
