@@ -18,17 +18,18 @@ export async function GET() {
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "center",
             width: "720px",
             height: "630px",
             padding: "60px",
+            gap: "24px",
           }}
         >
           {/* Site name */}
           <div
             style={{
               fontFamily: "monospace",
-              fontSize: "16px",
+              fontSize: "18px",
               fontWeight: 700,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -38,39 +39,43 @@ export async function GET() {
             SAVETHEVOTES.ORG
           </div>
 
-          {/* Headline */}
+          {/* Brand name */}
           <div
             style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "0px",
+              fontFamily: "Georgia, serif",
+              fontSize: "72px",
+              fontWeight: 400,
+              lineHeight: 1.05,
+              color: "#f1f5f9",
             }}
           >
-            <div
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "52px",
-                fontWeight: 400,
-                lineHeight: 1.1,
-                color: "#f1f5f9",
-              }}
-            >
-              Are You Ready to Prove You're a Citizen?
-            </div>
+            Save the Votes
           </div>
 
-          {/* Bottom tag */}
+          {/* Subtitle / what it is */}
           <div
             style={{
               fontFamily: "monospace",
-              fontSize: "14px",
+              fontSize: "16px",
               fontWeight: 700,
               letterSpacing: "0.15em",
               textTransform: "uppercase",
-              color: "#3b82f6",
+              color: "#94a3b8",
             }}
           >
-            ALL 50 STATE GUIDES →
+            Citizen Preparedness Resource
+          </div>
+
+          {/* Value prop */}
+          <div
+            style={{
+              fontSize: "22px",
+              lineHeight: 1.5,
+              color: "#94a3b8",
+              maxWidth: "540px",
+            }}
+          >
+            State-by-state guides to the documents you need to vote. All 50 states.
           </div>
         </div>
 
@@ -94,31 +99,25 @@ export async function GET() {
             background: "linear-gradient(to bottom, #3b82f6, #1d4ed8)",
           }}
         >
-          {/* Checkmark icon using SVG */}
+          {/* Large shield logo */}
           <svg
-            width="200"
-            height="200"
-            viewBox="0 0 200 200"
+            width="220"
+            height="220"
+            viewBox="0 0 64 64"
             fill="none"
-            style={{ opacity: 0.8 }}
+            style={{ opacity: 0.85 }}
           >
-            <rect
-              x="10"
-              y="10"
-              width="180"
-              height="180"
-              rx="20"
-              stroke="white"
-              strokeWidth="8"
-              fill="none"
+            <path
+              d="M32 4L8 16v16c0 14.4 10.24 27.84 24 32 13.76-4.16 24-17.6 24-32V16L32 4z"
+              fill="rgba(255,255,255,0.15)"
             />
             <path
-              d="M55 100 L85 135 L145 65"
-              stroke="white"
-              strokeWidth="12"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
+              d="M32 8L12 18v14c0 12.6 8.96 24.36 20 28 11.04-3.64 20-15.4 20-28V18L32 8z"
+              fill="rgba(255,255,255,0.2)"
+            />
+            <path
+              d="M28 34l-6-6 2.8-2.8L28 28.4l11.2-11.2L42 20 28 34z"
+              fill="white"
             />
           </svg>
         </div>
