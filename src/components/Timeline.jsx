@@ -54,7 +54,23 @@ export default function Timeline() {
             >
               {ev.date}
             </p>
-            <p className="text-text">{ev.event}</p>
+            <p className="text-text">
+              {ev.event}
+              {ev.sourceUrl && (
+                <>
+                  {" "}
+                  <a
+                    href={ev.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-text-muted hover:text-accent text-xs font-mono transition-colors"
+                    aria-label="Source"
+                  >
+                    [source]
+                  </a>
+                </>
+              )}
+            </p>
           </motion.li>
         ))}
       </motion.ol>
