@@ -10,7 +10,7 @@ export default function Footer() {
           </Link>{" "}
           is a nonpartisan informational resource. Data sourced from state vital records offices,
           Ballotpedia, Congress.gov, Brennan Center for Justice, and Bipartisan Policy Center.
-          Last updated February 2026. This resource does not constitute legal advice.
+          Last updated February 27, 2026. This resource does not constitute legal advice.
         </p>
         <p className="mt-3">
           <Link href="/privacy" className="font-mono text-xs text-text-muted hover:text-accent transition-colors">
