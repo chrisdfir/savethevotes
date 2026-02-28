@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import { Instrument_Serif, JetBrains_Mono, Inter } from "next/font/google";
 import ThemeToggle from "@/components/ThemeToggle";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -66,6 +67,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${instrumentSerif.variable} ${jetbrainsMono.variable} ${inter.variable}`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q4KK4D20JK"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q4KK4D20JK');
+          `}
+        </Script>
+      </head>
       <body className="bg-surface text-text min-h-screen antialiased">
         <a href="#main-content" className="skip-to-content">
           Skip to content
