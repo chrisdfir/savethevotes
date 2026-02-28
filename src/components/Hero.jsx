@@ -63,7 +63,7 @@ export default function Hero() {
           variants={item}
           className="flex gap-3 justify-center flex-wrap"
         >
-          <StatusBadge active={true} label="Passed House Feb 11, 2026" />
+          <StatusBadge active={true} label="Passed House Apr 10, 2025" />
           <StatusBadge active={false} label="Senate vote pending" />
         </motion.div>
 

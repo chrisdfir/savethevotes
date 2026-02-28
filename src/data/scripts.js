@@ -19,9 +19,9 @@ I am writing as your constituent from [City, State] regarding the SAVE Act (Safe
 
 I want to share my perspective on this legislation:
 
-1. Voter access matters. Roughly 146 million Americans do not have a valid passport, and an estimated 21 million citizens lack easy access to any citizenship document. These are our neighbors, seniors, and veterans.
+1. Voter access matters. An estimated 150 million or more Americans do not have a valid passport, and an estimated 21 million citizens lack easy access to any citizenship document. These are our neighbors, seniors, and veterans.
 
-2. The evidence shows the current system works. Federal and state audits consistently find that suspected noncitizen voting occurs at a rate of approximately 0.0001%. Existing penalties — including deportation and criminal prosecution — are already strong deterrents.
+2. The evidence shows the current system works. A Brennan Center survey of 42 local election jurisdictions found that suspected noncitizen voting occurred at a rate of approximately 0.0001% in the 2016 election. Existing penalties — including deportation and criminal prosecution — are already strong deterrents.
 
 3. Real-world consequences are significant. When Kansas implemented a similar requirement from 2013 to 2018, more than 31,000 eligible citizens were prevented from registering to vote before the law was struck down in court.
 
