@@ -12,6 +12,11 @@ export default function Footer() {
           Ballotpedia, Congress.gov, Brennan Center for Justice, and Bipartisan Policy Center.
           Last updated February 2026. This resource does not constitute legal advice.
         </p>
+        <p className="mt-3">
+          <Link href="/privacy" className="font-mono text-xs text-text-muted hover:text-accent transition-colors">
+            Privacy Policy
+          </Link>
+        </p>
       </div>
     </footer>
   );
