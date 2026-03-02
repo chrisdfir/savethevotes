@@ -3,6 +3,7 @@ import Script from "next/script";
 import Link from "next/link";
 import { Instrument_Serif, JetBrains_Mono, Inter } from "next/font/google";
 import ThemeToggle from "@/components/ThemeToggle";
+import SectionNav from "@/components/SectionNav";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
@@ -87,9 +88,12 @@ export default function RootLayout({ children }) {
           Skip to content
         </a>
         <nav aria-label="Site navigation" className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-surface/80 backdrop-blur-md border-b border-border">
-          <Link href="/" className="font-mono text-sm font-bold tracking-wider text-accent uppercase">
-            Save the Votes
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/" className="font-mono text-sm font-bold tracking-wider text-accent uppercase">
+              Save the Votes
+            </Link>
+            <SectionNav />
+          </div>
           <ThemeToggle />
         </nav>
         <main id="main-content" className="pt-14">

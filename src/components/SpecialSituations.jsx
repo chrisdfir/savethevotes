@@ -94,7 +94,7 @@ export default function SpecialSituations() {
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12">
+    <section id="situations" className="scroll-target max-w-5xl mx-auto px-6 py-12">
       <h2 className="font-serif text-3xl text-text mb-2">
         Special Situations
       </h2>

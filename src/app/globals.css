@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.scroll-target {
+  scroll-margin-top: 4.5rem;
+}
+
 @theme {
   /* Fonts - will be set by next/font CSS variables in layout */
   --font-serif: var(--font-instrument-serif), Georgia, serif;

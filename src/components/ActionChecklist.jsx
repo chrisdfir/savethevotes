@@ -22,7 +22,7 @@ export default function ActionChecklist() {
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12">
+    <section id="checklist" className="scroll-target max-w-5xl mx-auto px-6 py-12">
       <h2 className="font-serif text-3xl text-text mb-2">
         What You Can Do Right Now
       </h2>

@@ -84,7 +84,7 @@ export default function DocumentCards() {
   return (
     <section
       id="documents"
-      className="relative px-4 py-16 sm:px-6 md:py-24 max-w-6xl mx-auto"
+      className="scroll-target relative px-4 py-16 sm:px-6 md:py-24 max-w-6xl mx-auto"
     >
       {/* ---- Section header ---- */}
       <div className="text-center max-w-3xl mx-auto mb-12">

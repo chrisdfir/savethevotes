@@ -115,7 +115,7 @@ export default function ActionSection() {
   const toggle = (id) => setOpenPanel((prev) => (prev === id ? null : id));
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12">
+    <section id="act" className="scroll-target max-w-5xl mx-auto px-6 py-12">
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

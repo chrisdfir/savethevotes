@@ -69,7 +69,7 @@ export default function FactsGrid() {
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12">
+    <section id="facts" className="scroll-target max-w-5xl mx-auto px-6 py-12">
       <h2 className="font-serif text-3xl text-text mb-2">The Facts</h2>
       <p className="text-text-secondary mb-2">
         Numbers that show why proof-of-citizenship laws threaten eligible voters
