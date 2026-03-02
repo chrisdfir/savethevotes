@@ -77,12 +77,6 @@ function generateFaqs(stateName, state) {
     });
   }
 
-  // 6. Registration deadline
-  faqs.push({
-    question: `What is the voter registration deadline in ${stateName}?`,
-    answer: `The voter registration deadline in ${stateName} is ${state.registrationDeadline.toLowerCase()}. Make sure to register or update your registration well before this deadline to ensure you can vote.`,
-  });
-
   return faqs;
 }
 

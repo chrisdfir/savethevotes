@@ -25,15 +25,13 @@ function isVolatilePlaceholder(value) {
   );
 }
 
-/** Extract first clause from a long descriptive string (up to first semicolon, parenthetical, or subordinate clause). */
-function firstClause(text) {
-  if (!text) return "";
-  // Split on semicolons, " - ", or "; " and take the first part
-  const cut = text.split(/;\s| — |\. /)[0];
-  // Remove trailing parenthetical
-  const cleaned = cut.replace(/\s*\([^)]*\)\s*$/, "").trim();
-  // Lowercase the first character
-  return cleaned.charAt(0).toLowerCase() + cleaned.slice(1);
+/** Short badge label derived from the long voterIdType description. */
+function getVoterIdBadge(state) {
+  if (!state.voterIdRequired) return "No ID required";
+  const t = state.voterIdType.toLowerCase();
+  if (t.includes("photo id")) return "Photo ID required";
+  if (t.includes("government-issued")) return "Gov't ID required";
+  return "ID required";
 }
 
 function getPocStatus(state) {
@@ -403,30 +401,10 @@ export default function StateGuide({ stateName, state, slug }) {
             POC: {poc.label}
           </span>
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold bg-surface-elevated text-text-muted border border-border">
-            ID: {state.voterIdType}
+            {getVoterIdBadge(state)}
           </span>
         </div>
       </header>
-
-      {/* State-specific summary for SEO uniqueness */}
-      <p className="text-sm text-text-secondary leading-relaxed mt-6 mb-8">
-        {stateName} {state.currentPocLaw && state.pocImplemented
-          ? "currently enforces a proof-of-citizenship requirement for voter registration"
-          : state.currentPocLaw
-            ? "has a proof-of-citizenship law on the books, though it is not currently enforced"
-            : "does not currently require documentary proof of citizenship to register to vote"
-        }.{" "}
-        {state.voterIdRequired
-          ? `Voter ID: ${firstClause(state.voterIdType)}.`
-          : "No general voter ID is required at the polls."
-        }{" "}
-        Birth certificate cost: {isVolatilePlaceholder(state.birthCertCost)
-          ? "varies (see state vital records office)"
-          : firstClause(state.birthCertCost)
-        }.{" "}
-        {state.onlineReg ? "Online voter registration is available." : "Online voter registration is not available; register by mail or in person."}{" "}
-        Registration deadline: {firstClause(state.registrationDeadline)}.
-      </p>
 
       {/* Mini map */}
       <div className="max-w-md mx-auto mb-10">
