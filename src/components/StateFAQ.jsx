@@ -4,14 +4,31 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { acceptableDocuments } from "@/data/documents";
 
+const volatilePlaceholderPatterns = [
+  /see .*fee schedule/i,
+  /varies by/i,
+  /processing queue/i,
+  /see .*processing/i,
+];
+
+function isVolatilePlaceholder(value) {
+  return (
+    typeof value === "string" &&
+    volatilePlaceholderPatterns.some((pattern) => pattern.test(value))
+  );
+}
+
 function generateFaqs(stateName, state) {
   const faqs = [];
+  const pocScopeText = state.pocScope
+    ? ` In ${stateName}, this currently applies to ${state.pocScope}.`
+    : "";
 
   // 1. POC question
   if (state.currentPocLaw && state.pocImplemented) {
     faqs.push({
       question: `Do I need proof of citizenship to register to vote in ${stateName}?`,
-      answer: `Yes. ${stateName} currently has an active proof-of-citizenship requirement for voter registration. You will need to provide documentary proof of U.S. citizenship, such as a birth certificate, U.S. passport, or naturalization certificate, when registering to vote.${state.notes ? ` ${state.notes}` : ""}`,
+      answer: `It depends on your registration path. ${stateName} currently has an active proof-of-citizenship requirement for voter registration.${pocScopeText} Accepted documents can include a birth certificate, U.S. passport, or naturalization certificate.${state.notes ? ` ${state.notes}` : ""}`,
     });
   } else if (state.currentPocLaw && !state.pocImplemented) {
     faqs.push({
@@ -26,9 +43,15 @@ function generateFaqs(stateName, state) {
   }
 
   // 2. Birth certificate cost
+  const feeIsPlaceholder = isVolatilePlaceholder(state.birthCertCost);
+  const timeIsPlaceholder = isVolatilePlaceholder(state.birthCertTime);
+  const birthCertAnswer =
+    feeIsPlaceholder || timeIsPlaceholder
+      ? `Birth certificate fees and processing times in ${stateName} can change frequently by channel and workload. Use the official ${stateName} vital records office for current details: ${state.vitalRecordsUrl}.`
+      : `A certified birth certificate in ${stateName} costs ${state.birthCertCost}. Processing typically takes ${state.birthCertTime}. Use the official ${stateName} vital records office for current details: ${state.vitalRecordsUrl}.`;
   faqs.push({
     question: `How much does a birth certificate cost in ${stateName}?`,
-    answer: `A certified birth certificate in ${stateName} costs ${state.birthCertCost}. Processing typically takes ${state.birthCertTime}. You can order online through VitalChek or directly from the ${stateName} vital records office. Remember: you must order from the state where you were born, not where you currently live.`,
+    answer: `${birthCertAnswer} Remember: you must order from the state where you were born, not where you currently live.`,
   });
 
   // 3. Voter ID

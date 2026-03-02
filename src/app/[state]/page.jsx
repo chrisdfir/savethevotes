@@ -4,6 +4,20 @@ import { notFound } from "next/navigation";
 import StateGuide from "@/components/StateGuide";
 import StateFAQ from "@/components/StateFAQ";
 
+const volatilePlaceholderPatterns = [
+  /see .*fee schedule/i,
+  /varies by/i,
+  /processing queue/i,
+  /see .*processing/i,
+];
+
+function isVolatilePlaceholder(value) {
+  return (
+    typeof value === "string" &&
+    volatilePlaceholderPatterns.some((pattern) => pattern.test(value))
+  );
+}
+
 export function generateStaticParams() {
   return getAllStateSlugs().map((state) => ({ state }));
 }
@@ -14,7 +28,18 @@ export async function generateMetadata({ params }) {
   if (!stateName) return {};
   const state = stateData[stateName];
 
-  const description = `Everything you need to register to vote in ${stateName}. Birth certificate costs ${state.birthCertCost}, processing ${state.birthCertTime}. ${state.currentPocLaw ? "Proof of citizenship required." : "No proof of citizenship requirement."} Voter ID: ${state.voterIdType}.`;
+  const pocSummary = state.currentPocLaw
+    ? (state.pocImplemented
+        ? `Proof-of-citizenship rule is active${state.pocScope ? ` for ${state.pocScope}` : ""}.`
+        : "Proof-of-citizenship law exists but is not currently enforced.")
+    : "No proof-of-citizenship requirement is currently active.";
+  const hasVolatilePlaceholders =
+    isVolatilePlaceholder(state.birthCertCost) ||
+    isVolatilePlaceholder(state.birthCertTime);
+  const birthMeta = hasVolatilePlaceholders
+    ? `Birth certificate fees and processing can vary; see official state sources for current details.`
+    : `Birth certificate costs ${state.birthCertCost}, processing ${state.birthCertTime}.`;
+  const description = `Everything you need to register to vote in ${stateName}. ${birthMeta} ${pocSummary} Voter ID: ${state.voterIdType}.`;
   const ogDescription = `Voter registration requirements, birth certificate info, and election resources for ${stateName}.`;
 
   return {

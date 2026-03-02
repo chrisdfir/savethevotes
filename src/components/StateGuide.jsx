@@ -11,6 +11,35 @@ const tabs = [
   { id: "resources", label: "Resources" },
 ];
 
+const volatilePlaceholderPatterns = [
+  /see .*fee schedule/i,
+  /varies by/i,
+  /processing queue/i,
+  /see .*processing/i,
+];
+
+function isVolatilePlaceholder(value) {
+  return (
+    typeof value === "string" &&
+    volatilePlaceholderPatterns.some((pattern) => pattern.test(value))
+  );
+}
+
+function formatIsoDate(isoDate) {
+  if (typeof isoDate !== "string") {
+    return "Unknown";
+  }
+  const parsed = new Date(isoDate);
+  if (Number.isNaN(parsed.getTime())) {
+    return isoDate;
+  }
+  return parsed.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
 function getPocStatus(state) {
   if (state.currentPocLaw && state.pocImplemented) {
     return { label: "Yes — Active", color: "text-danger", bgColor: "bg-danger/10 border-danger/20" };
@@ -85,6 +114,10 @@ function RequirementsTab({ stateName, state }) {
 }
 
 function BirthCertTab({ stateName, state }) {
+  const hasVolatileBirthData =
+    isVolatilePlaceholder(state.birthCertCost) ||
+    isVolatilePlaceholder(state.birthCertTime);
+
   return (
     <div className="space-y-8">
       {/* Cost & time */}
@@ -92,6 +125,25 @@ function BirthCertTab({ stateName, state }) {
         <InfoBox label="Birth Certificate Cost" value={state.birthCertCost} />
         <InfoBox label="Processing Time" value={state.birthCertTime} />
       </div>
+
+      {(state.needsReview || hasVolatileBirthData) && (
+        <div className="bg-warning/10 border border-warning/30 rounded-xl p-4 text-sm text-text-secondary">
+          <span className="font-bold font-mono text-xs uppercase tracking-wider text-warning block mb-1">
+            Verification Note
+          </span>
+          Fee and timing details can change frequently. Confirm current details on the official state site before purchasing:
+          {" "}
+          <a
+            href={state.vitalRecordsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline"
+          >
+            {stateName} Vital Records
+            <span className="sr-only">(opens in new tab)</span>
+          </a>.
+        </div>
+      )}
 
       {/* How to order */}
       <div className="bg-surface-elevated border border-border rounded-xl p-6">
@@ -191,6 +243,10 @@ function ResourceCard({ href, title, description }) {
 }
 
 function ResourcesTab({ stateName, state }) {
+  const verificationSources = Array.isArray(state.verificationSourceSet)
+    ? state.verificationSourceSet
+    : [];
+
   return (
     <div className="space-y-8">
       {/* State resources */}
@@ -240,6 +296,24 @@ function ResourcesTab({ stateName, state }) {
           />
         </div>
       </div>
+
+      {verificationSources.length > 0 && (
+        <div>
+          <h3 className="font-serif text-xl text-text mb-4">
+            Verification Sources
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {verificationSources.slice(0, 6).map((href, i) => (
+              <ResourceCard
+                key={`${href}-${i}`}
+                href={href}
+                title={`Source ${i + 1}`}
+                description={href}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Take Action */}
       <div className="bg-surface-elevated border border-border rounded-xl p-6">
@@ -334,6 +408,16 @@ export default function StateGuide({ stateName, state, slug }) {
           </span>
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold bg-surface-elevated text-text-muted border border-border">
             ID: {state.voterIdType}
+          </span>
+          <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold border ${
+            state.needsReview
+              ? "bg-warning/10 text-warning border-warning/30"
+              : "bg-success/10 text-success border-success/30"
+          }`}>
+            {state.needsReview ? "Status: Needs Review" : "Status: Verified"}
+          </span>
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold bg-surface-elevated text-text-muted border border-border">
+            Last verified: {formatIsoDate(state.lastVerified)}
           </span>
         </div>
       </header>
