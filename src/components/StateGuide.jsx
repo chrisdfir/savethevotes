@@ -25,6 +25,17 @@ function isVolatilePlaceholder(value) {
   );
 }
 
+/** Extract first clause from a long descriptive string (up to first semicolon, parenthetical, or subordinate clause). */
+function firstClause(text) {
+  if (!text) return "";
+  // Split on semicolons, " - ", or "; " and take the first part
+  const cut = text.split(/;\s| — |\. /)[0];
+  // Remove trailing parenthetical
+  const cleaned = cut.replace(/\s*\([^)]*\)\s*$/, "").trim();
+  // Lowercase the first character
+  return cleaned.charAt(0).toLowerCase() + cleaned.slice(1);
+}
+
 function getPocStatus(state) {
   if (state.currentPocLaw && state.pocImplemented) {
     return { label: "Yes — Active", color: "text-danger", bgColor: "bg-danger/10 border-danger/20" };
@@ -406,18 +417,15 @@ export default function StateGuide({ stateName, state, slug }) {
             : "does not currently require documentary proof of citizenship to register to vote"
         }.{" "}
         {state.voterIdRequired
-          ? `Voters need ${state.voterIdType.charAt(0).toLowerCase()}${state.voterIdType.slice(1, 80)}${state.voterIdType.length > 80 ? "..." : ""}.`
+          ? `Voters need ${firstClause(state.voterIdType)}.`
           : "No general voter ID is required at the polls."
         }{" "}
         A certified birth certificate costs {isVolatilePlaceholder(state.birthCertCost)
           ? "varies (see state vital records office)"
-          : state.birthCertCost.split(";")[0].split("(")[0].trim()
+          : firstClause(state.birthCertCost)
         }.{" "}
         {state.onlineReg ? "Online voter registration is available." : "Online voter registration is not available; register by mail or in person."}{" "}
-        Registration deadline: {state.registrationDeadline.length > 100
-          ? state.registrationDeadline.slice(0, 100) + "..."
-          : state.registrationDeadline.toLowerCase()
-        }.
+        Registration deadline: {firstClause(state.registrationDeadline)}.
       </p>
 
       {/* Mini map */}

@@ -1,7 +1,6 @@
 import { stateData } from "@/data/states";
 import { stateToSlug } from "@/data/stateSlugs";
-
-const SITE_LAST_UPDATED = "2026-03-02";
+import { SITE_LAST_UPDATED } from "@/data/siteConfig";
 
 export default function sitemap() {
   const states = Object.entries(stateData).map(([name, state]) => ({
