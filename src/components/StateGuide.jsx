@@ -417,10 +417,10 @@ export default function StateGuide({ stateName, state, slug }) {
             : "does not currently require documentary proof of citizenship to register to vote"
         }.{" "}
         {state.voterIdRequired
-          ? `Voters need ${firstClause(state.voterIdType)}.`
+          ? `Voter ID: ${firstClause(state.voterIdType)}.`
           : "No general voter ID is required at the polls."
         }{" "}
-        A certified birth certificate costs {isVolatilePlaceholder(state.birthCertCost)
+        Birth certificate cost: {isVolatilePlaceholder(state.birthCertCost)
           ? "varies (see state vital records office)"
           : firstClause(state.birthCertCost)
         }.{" "}
