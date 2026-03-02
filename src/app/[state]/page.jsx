@@ -53,7 +53,7 @@ export async function generateMetadata({ params }) {
       type: "article",
       images: [
         {
-          url: "https://www.savethevotes.org/og",
+          url: "https://savethevotes.org/og",
           width: 1200,
           height: 630,
           alt: `${stateName} Voter Registration Guide — Save the Votes`,
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: `${stateName} Voting Guide — Save the Votes`,
       description: ogDescription,
-      images: ["https://www.savethevotes.org/og"],
+      images: ["https://savethevotes.org/og"],
     },
     alternates: {
       canonical: `https://savethevotes.org/${slug}`,

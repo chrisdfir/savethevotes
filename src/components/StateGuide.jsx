@@ -397,6 +397,29 @@ export default function StateGuide({ stateName, state, slug }) {
         </div>
       </header>
 
+      {/* State-specific summary for SEO uniqueness */}
+      <p className="text-sm text-text-secondary leading-relaxed mt-6 mb-8">
+        {stateName} {state.currentPocLaw && state.pocImplemented
+          ? "currently enforces a proof-of-citizenship requirement for voter registration"
+          : state.currentPocLaw
+            ? "has a proof-of-citizenship law on the books, though it is not currently enforced"
+            : "does not currently require documentary proof of citizenship to register to vote"
+        }.{" "}
+        {state.voterIdRequired
+          ? `Voters need ${state.voterIdType.charAt(0).toLowerCase()}${state.voterIdType.slice(1, 80)}${state.voterIdType.length > 80 ? "..." : ""}.`
+          : "No general voter ID is required at the polls."
+        }{" "}
+        A certified birth certificate costs {isVolatilePlaceholder(state.birthCertCost)
+          ? "varies (see state vital records office)"
+          : state.birthCertCost.split(";")[0].split("(")[0].trim()
+        }.{" "}
+        {state.onlineReg ? "Online voter registration is available." : "Online voter registration is not available; register by mail or in person."}{" "}
+        Registration deadline: {state.registrationDeadline.length > 100
+          ? state.registrationDeadline.slice(0, 100) + "..."
+          : state.registrationDeadline.toLowerCase()
+        }.
+      </p>
+
       {/* Mini map */}
       <div className="max-w-md mx-auto mb-10">
         <USMap highlight={stateName} />

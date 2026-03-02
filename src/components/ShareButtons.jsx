@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 
-const SITE_URL = "https://www.savethevotes.org";
+const SITE_URL = "https://savethevotes.org";
 const SHARE_TEXT =
   "The SAVE Act could change how Americans register to vote. Find out what documents you need — state-by-state guide:";
 

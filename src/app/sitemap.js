@@ -1,9 +1,12 @@
-import { getAllStateSlugs } from "@/data/stateSlugs";
+import { stateData } from "@/data/states";
+import { stateToSlug } from "@/data/stateSlugs";
+
+const SITE_LAST_UPDATED = "2026-03-02";
 
 export default function sitemap() {
-  const states = getAllStateSlugs().map((slug) => ({
-    url: `https://savethevotes.org/${slug}`,
-    lastModified: new Date(),
+  const states = Object.entries(stateData).map(([name, state]) => ({
+    url: `https://savethevotes.org/${stateToSlug(name)}`,
+    lastModified: state.lastVerified || SITE_LAST_UPDATED,
     changeFrequency: "weekly",
     priority: 0.8,
   }));
@@ -11,13 +14,13 @@ export default function sitemap() {
   return [
     {
       url: "https://savethevotes.org",
-      lastModified: new Date(),
+      lastModified: SITE_LAST_UPDATED,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: "https://savethevotes.org/privacy",
-      lastModified: new Date(),
+      lastModified: SITE_LAST_UPDATED,
       changeFrequency: "yearly",
       priority: 0.3,
     },

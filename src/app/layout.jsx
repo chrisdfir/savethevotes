@@ -43,7 +43,7 @@ export const metadata = {
       "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides, birth certificate costs, voter ID rules, and election office links for all 50 states.",
     images: [
       {
-        url: "https://www.savethevotes.org/og",
+        url: "https://savethevotes.org/og",
         width: 1200,
         height: 630,
         alt: "Save the Votes — Citizen Preparedness Resource",
@@ -55,7 +55,7 @@ export const metadata = {
     title: "Save the Votes — Citizen Preparedness Resource",
     description:
       "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides, birth certificate costs, voter ID rules, and election office links for all 50 states.",
-    images: ["https://www.savethevotes.org/og"],
+    images: ["https://savethevotes.org/og"],
   },
   alternates: {
     canonical: "https://savethevotes.org",
@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "Save the Votes",
               url: "https://savethevotes.org",
-              logo: "https://www.savethevotes.org/og",
+              logo: "https://savethevotes.org/og",
               description:
                 "Nonpartisan citizen preparedness resource for the SAVE Act. State-by-state voter registration guides for all 50 states.",
               contactPoint: {
