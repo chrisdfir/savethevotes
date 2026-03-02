@@ -80,10 +80,11 @@ export default function TermsPage() {
             Intellectual Property
           </h2>
           <p>
-            Original content on this site (design, text, and code) is made
-            available under open-source principles. Government data cited on
-            this site is public domain. Source attributions are provided
-            throughout the site for all factual claims.
+            All original content on this site (design, text, and code) is
+            the property of Save the Votes. Government data cited on this
+            site is public domain. Source attributions are provided
+            throughout the site for all factual claims. No content may be
+            reproduced without permission.
           </p>
         </section>
 

@@ -124,15 +124,12 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-serif text-xl text-text mb-3">Contact</h2>
           <p>
-            If you have questions about this privacy policy, you can reach
-            us through the{" "}
+            Questions about this privacy policy can be directed to{" "}
             <a
-              href="https://github.com/chrisdfir/savethevotes"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:info@savethevotes.org"
               className="text-accent hover:underline"
             >
-              project&apos;s GitHub repository
+              info@savethevotes.org
             </a>
             .
           </p>
