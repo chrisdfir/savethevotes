@@ -40,7 +40,7 @@ export const metadata = {
     url: "https://savethevotes.org",
     title: "Save the Votes — Citizen Preparedness Resource",
     description:
-      "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides for all 50 states.",
+      "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides, birth certificate costs, voter ID rules, and election office links for all 50 states.",
     images: [
       {
         url: "https://www.savethevotes.org/og",
@@ -54,7 +54,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Save the Votes — Citizen Preparedness Resource",
     description:
-      "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides for all 50 states.",
+      "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides, birth certificate costs, voter ID rules, and election office links for all 50 states.",
     images: ["https://www.savethevotes.org/og"],
   },
   alternates: {
@@ -70,6 +70,38 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${instrumentSerif.variable} ${jetbrainsMono.variable} ${inter.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Save the Votes",
+              url: "https://savethevotes.org",
+              logo: "https://www.savethevotes.org/og",
+              description:
+                "Nonpartisan citizen preparedness resource for the SAVE Act. State-by-state voter registration guides for all 50 states.",
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "info@savethevotes.org",
+                contactType: "customer support",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Save the Votes",
+              url: "https://savethevotes.org",
+              description:
+                "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides for all 50 states.",
+            }),
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Q4KK4D20JK"
           strategy="afterInteractive"

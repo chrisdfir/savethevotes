@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
     ? `Birth certificate fees and processing can vary; see official state sources for current details.`
     : `Birth certificate costs ${state.birthCertCost}, processing ${state.birthCertTime}.`;
   const description = `Everything you need to register to vote in ${stateName}. ${birthMeta} ${pocSummary} Voter ID: ${state.voterIdType}.`;
-  const ogDescription = `Voter registration requirements, birth certificate info, and election resources for ${stateName}.`;
+  const ogDescription = `${stateName} voter registration guide: birth certificate costs, voter ID rules, proof-of-citizenship status, election office links, and deadlines. Free nonpartisan resource.`;
 
   return {
     title: `${stateName} Voter Registration Guide`,
@@ -78,8 +78,49 @@ export default async function StatePage({ params }) {
   if (!stateName) notFound();
   const state = stateData[stateName];
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://savethevotes.org",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `${stateName} Voter Registration Guide`,
+        item: `https://savethevotes.org/${slug}`,
+      },
+    ],
+  };
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${stateName} Voter Registration Guide`,
+    description: `Everything you need to register to vote in ${stateName}. Birth certificate info, voter ID rules, and election resources.`,
+    url: `https://savethevotes.org/${slug}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Save the Votes",
+      url: "https://savethevotes.org",
+    },
+    dateModified: state.lastVerified || "2026-03-02",
+  };
+
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
       <StateGuide stateName={stateName} state={state} slug={slug} />
       <StateFAQ stateName={stateName} state={state} />
     </article>

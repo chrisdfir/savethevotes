@@ -98,7 +98,7 @@ function FAQItem({ faq, index }) {
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${index}`}
       >
-        <span className="text-sm font-semibold text-text">{faq.question}</span>
+        <h3 className="text-sm font-semibold text-text">{faq.question}</h3>
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"

@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy policy for Save the Votes — how we handle your data and use analytics.",
+    "Privacy policy for Save the Votes. Learn how we handle your data, what Google Analytics collects, what we never collect, and your opt-out choices.",
   alternates: {
     canonical: "https://savethevotes.org/privacy",
   },
