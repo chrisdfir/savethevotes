@@ -10,12 +10,16 @@ export default function Footer() {
           </Link>{" "}
           is a nonpartisan informational resource. Data sourced from state vital records offices,
           Ballotpedia, Congress.gov, Brennan Center for Justice, and Bipartisan Policy Center.
-          Last updated March 1, 2026. This resource does not constitute legal advice.
+          Last updated March 2, 2026. This resource does not constitute legal advice.
         </p>
-        <p className="mt-3">
+        <p className="mt-3 flex items-center justify-center gap-3">
           <Link href="/privacy" className="font-mono text-xs text-text-muted hover:text-accent transition-colors">
             Privacy Policy
           </Link>
+          <span className="text-border">|</span>
+          <a href="mailto:info@savethevotes.org" className="font-mono text-xs text-text-muted hover:text-accent transition-colors">
+            Feedback
+          </a>
         </p>
       </div>
     </footer>
