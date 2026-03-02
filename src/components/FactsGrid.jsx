@@ -33,9 +33,9 @@ const facts = [
     sourceUrl: "https://www.aclu.org/cases/fish-v-schwab-formerly-fish-v-kobach",
   },
   {
-    stat: "84%",
+    stat: "~80%",
     label: "of married women who change their surname",
-    sub: "~69M may have name mismatch on birth cert",
+    sub: "Millions may have name mismatch on birth cert",
     source: "Pew Research Center (2023)",
     sourceUrl:
       "https://www.pewresearch.org/short-reads/2023/09/07/about-eight-in-ten-women-in-opposite-sex-marriages-say-they-took-their-husbands-last-name/",
