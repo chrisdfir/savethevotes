@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { trackShare } from "@/lib/analytics";
+import { copyToClipboard } from "@/lib/clipboard";
 
 const SITE_URL = "https://savethevotes.org";
 const SHARE_TEXT =
@@ -17,7 +18,7 @@ function ShareButton({ href, onClick, label, children, className = "" }) {
     <Tag
       {...props}
       aria-label={label}
-      className={`inline-flex items-center justify-center w-10 h-10 rounded-full border border-border bg-surface-elevated text-text-muted hover:text-accent hover:border-accent/40 transition-colors ${className}`}
+      className={`inline-flex items-center justify-center w-11 h-11 rounded-full border border-border bg-surface-elevated text-text-muted hover:text-accent hover:border-accent/40 transition-colors ${className}`}
     >
       {children}
     </Tag>
@@ -28,18 +29,7 @@ export default function ShareButtons() {
   const [copied, setCopied] = useState(false);
 
   const copyLink = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(SITE_URL);
-    } catch {
-      const textarea = document.createElement("textarea");
-      textarea.value = SITE_URL;
-      textarea.style.position = "fixed";
-      textarea.style.opacity = "0";
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
-    }
+    await copyToClipboard(SITE_URL);
     setCopied(true);
     trackShare("copy_link");
     setTimeout(() => setCopied(false), 2000);

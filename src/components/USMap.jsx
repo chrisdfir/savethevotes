@@ -93,6 +93,7 @@ export default function USMap({ highlight = null }) {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
+        <title>Interactive map of the United States showing proof-of-citizenship law status by state</title>
         {locations.map((loc) => (
           <path
             key={loc.id}
