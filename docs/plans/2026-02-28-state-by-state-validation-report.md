@@ -143,34 +143,34 @@ For each state:
 
 | State | Status | POC Result | Key Changes | Sources Logged | Last Reviewed |
 |---|---|---|---|---|---|
-| Alabama | Validated - Updated (status downgraded for legal certainty) | `currentPocLaw: true`, `pocImplemented: false` | Revalidated 15-day registration deadline and SOS photo-ID/provisional rules; updated ADPH birth-certificate fields to source-exact fee text and method-dependent timing wording; retained legal-status monitoring classification pending adjudication review | AL SOS, AL ADPH, NCSL | 2026-03-01 |
+| Alabama | Validated - Updated | `currentPocLaw: true`, `pocImplemented: false` | Corrected registration deadline wording to SOS FAQ-backed 14-day close window; revalidated SOS photo-ID/provisional rules and ADPH birth-certificate fee/timing language from primary text | AL SOS, AL ADPH, NCSL | 2026-03-02 |
 | Alaska | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated voter-registration, voter-ID-at-polls statute text, and vital-record fees/processing advisory from primary Alaska sources; replaced statute mirror with official Alaska Legislature citation; upgraded confidence and cleared placeholder deadline language | AK Division of Elections, AK Legislature, AK Vital Records, NCSL | 2026-03-02 |
 | Arizona | Validated - Updated | `currentPocLaw: true`, `pocImplemented: true` (scoped) | Replaced dead SOS links with live pages; re-verified DPOC/federal-only scope and poll-ID requirements; anchored 29-day deadline to official statute text; promoted birth-certificate state fee from ADHS fee schedule | AZ SOS, AZ Legislature, ADHS, NCSL | 2026-03-01 |
 | Arkansas | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Re-verified registration method, deadline, voter-ID/provisional language, and birth-record fee/timing from live state pages; removed statute-mirror dependency | AR SOS, AR Dept. of Health, NCSL | 2026-03-01 |
 | California | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated 15-day deadline, same-day conditional registration, and first-time ID exception wording from SOS; replaced fee/time placeholders with CDPH-VR primary values ($31/copy and 5-7 week average processing) | CA SOS, CDPH Vital Records, NCSL | 2026-03-02 |
 | Colorado | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Promoted exact Colorado birth-certificate fee values from the 2026 COVES fee schedule ($25 first copy, $20 additional same-order copies), retained 30-business-day online processing language from CDPHE, and confirmed Election-Day registration / 8-day mail-ballot registration cutoff from SOS FAQ | CO SOS, CDPHE Vital Records, NCSL | 2026-03-01 |
-| Connecticut | Validated - Updated (partial, polling-place ID alternatives pending) | `currentPocLaw: false`, `pocImplemented: false` | Revalidated 18-day registration cutoff and Same-Day Registration proof requirements, plus CT DPH birth-certificate fee/time values; legacy voter-ID URL remains retired and polling-place alternative-ID citation still needs a direct primary page | CT SOTS, CT DPH, NCSL | 2026-03-02 |
+| Connecticut | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated 18-day registration cutoff and Same-Day Registration proof requirements; added CT General Assembly statute citation for polling-place ID presentation and signed-statement fallback; confirmed CT DPH birth-certificate fee/time values | CT SOTS, CT General Assembly, CT DPH, NCSL | 2026-03-02 |
 | Delaware | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Promoted Delaware OVS birth-certificate values from official application PDF ($25 per copy; mail requests completed and mailed in about 2-4 weeks), retained source-backed registration deadline text, and replaced dead standalone voter-ID FAQ dependency with live election-page evidence | DE Elections, DE OVS/DPH, NCSL | 2026-03-01 |
 | Florida | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Replaced unsourced political note with source-backed policy note; updated election URL to direct registration page; refined voter-ID wording (photo + signature requirement); refined birth-cert fee/time with official FL DOH values | FL DOS, FL DOH, NCSL | 2026-03-01 |
 | Georgia | Validated - Updated | `currentPocLaw: true`, `pocImplemented: true` (scoped) | Revalidated Georgia SOS FAQ registration cutoff text (at least 30 days before an election), anchored voter-ID wording to current SOS FAQ/ID pages, and retained DPH source-backed birth-certificate fee/time values | GA SOS, GA DPH, GA Election Rule 183-1-6-.06, NCSL | 2026-03-01 |
-| Hawaii | Validated - Updated (partial, source-link refresh) | `currentPocLaw: false`, `pocImplemented: false` | Replaced dead Hawaii FAQ source URLs with live Register/Voting pages; revalidated paper-deadline + online-anytime + same-day-at-VSC model and retained source-backed birth-certificate fee/processing values from official DOH order page | HI Elections, HI DOH Vital Records, NCSL | 2026-03-02 |
+| Hawaii | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated paper-deadline + online-anytime + same-day-at-VSC model; added Hawaii provisional-voting primary source for HAVA identification context; retained source-backed birth-certificate fee/processing values from official DOH order page | HI Elections, HI DOH Vital Records, NCSL | 2026-03-02 |
 | Idaho | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Replaced dead VoteIdaho and DHW URLs with live pages; confirmed online registration 11-day cutoff plus in-person Election Day registration; confirmed photo-ID-or-affidavit rule; promoted birth-certificate fee and processing timelines from current DHW processing page | VoteIdaho, Idaho DHW, NCSL | 2026-03-01 |
 | Illinois | Validated - Updated (2nd pass: deadline + URL fixes) | `currentPocLaw: false`, `pocImplemented: false` | 2nd-pass fixes: tightened registration deadline to statute-backed "28 days before" close with "27 days before" grace-period start (per 10 ILCS 5/4-6.2 and SBE FAQ); moved electionOfficeUrl from VoteRegStatus query-param page (renders as homepage) to stable FAQ#VoterRegistration anchor; removed VoteRegStatus from verificationSourceSet; retained IDPH fee/time values | IL SBE FAQ, IL IDPH, NCSL | 2026-03-01 |
 | Indiana | Validated - Updated | `currentPocLaw: true`, `pocImplemented: true` (scoped) | Revalidated 2026 registration deadlines and online registration pathway; tightened photo-ID language to include 10-day provisional cure window; confirmed IDOH fee and processing tables from expanded sections; corrected POC scope from blanket wording to conditional verification/matching model | IN SOS, IN DOH Vital Records, NCSL | 2026-03-01 |
 | Iowa | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Replaced dead Iowa HHS vital-records URL with live Family & Community path; promoted birth-certificate fee and method-specific processing windows from primary pages; updated SOS links to current voter-registration and voter-ID FAQ paths with explicit 15-day preregistration deadline and Election Day registration context | IA SOS, Iowa HHS, NCSL | 2026-03-01 |
-| Kansas | Validated - Updated | `currentPocLaw: true`, `pocImplemented: false` | Revalidated 21-day registration deadline and in-person photo-ID/provisional workflow from SOS pages; promoted birth-certificate fee and method-specific processing times from KDHE birth-certificate table; updated NCSL source URL and removed placeholder vital-record text | KS SOS, KDHE, NCSL | 2026-03-01 |
+| Kansas | Validated - Updated | `currentPocLaw: true`, `pocImplemented: false` | Revalidated 21-day registration deadline and in-person photo-ID/provisional workflow from SOS pages; confirmed KDHE fee table and method-specific processing windows from primary text | KS SOS, KDHE, NCSL | 2026-03-02 |
 | Kentucky | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Replaced dead election links with live KY voters pages; revalidated 29-day registration timing with 2026 key-date evidence; updated voter-ID text to explicit "all voters must produce identification" standard; promoted birth-certificate fee and processing windows from CHFS Certificate Purchase Options page | KY Elections, KY CHFS/OVS, NCSL | 2026-03-01 |
-| Louisiana | Validated - Updated | `currentPocLaw: true`, `pocImplemented: false` | Replaced dead LDH vital-record URL (`subhome/56`) with live pages; promoted exact birth-certificate fee and delivery timing from current LDH fee/order pages; revalidated online vs mail/in-person registration deadlines and voter-ID affidavit fallback language from SOS election pages | LA SOS, LA DOH Vital Records, NCSL | 2026-03-01 |
+| Louisiana | Validated - Updated | `currentPocLaw: true`, `pocImplemented: false` | Reconfirmed exact birth-certificate fee and delivery timing from current LDH fee/order pages and revalidated online vs mail/in-person registration deadlines plus voter-ID affidavit fallback language from SOS election pages | LA SOS, LA DOH Vital Records, NCSL | 2026-03-02 |
 | Maine | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Replaced legacy SOS and vital-record URLs with current pages; promoted explicit registration cutoffs (including Election Day in-person registration), no-general-ID voter rule, and DRVS birth-certificate fee schedule with same-day/24-hour walk-in processing guidance | ME SOS, Maine CDC/DRVS, NCSL | 2026-03-01 |
 | Maryland | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated registration workflow with advanced cutoff and same-day registration options; replaced stale voter-ID citation with live Election Day guidance; promoted exact birth-certificate fee and current processing timelines from MD Vital Statistics fee/processing pages | MD State Board of Elections, MD Vital Statistics, NCSL | 2026-03-01 |
 | Massachusetts | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Promoted exact state-office fee table and processing windows from Mass.gov order page; tightened registration deadline wording to "10 days before any election or town meeting"; replaced dead legacy voter-ID URL citation with live registration-page first-time-ID evidence | MA Elections Division, MA Vital Records, NCSL | 2026-03-01 |
 | Michigan | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated all fields from live Michigan SOS and MDHHS pages; replaced vendor-dependent citation with direct MDHHS fee/time text; tightened registration window wording (15+ days vs within 14 days/Election Day) and in-person affidavit language | MI SOS, MI MDHHS Vital Records, NCSL | 2026-03-01 |
-| Minnesota | Validated - Updated (dynamic processing monitor) | `currentPocLaw: false`, `pocImplemented: false` | Revalidated exact online/paper registration cutoffs and Election Day registration pathway; tightened no-general-ID framing to registration-context proof-of-residence rule; promoted MDH birth-certificate fee and current processing bulletin dates from primary pages | MN SOS, MN MDH Vital Records, NCSL | 2026-03-01 |
+| Minnesota | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated registration cutoffs and Election Day proof-of-residence pathway using Minnesota statute plus SOS page; refreshed MDH fee table and rolling processing bulletin references from primary pages | MN SOS, MN Revisor, MN MDH Vital Records, NCSL | 2026-03-02 |
 | Mississippi | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated registration deadline and no-online-registration model from SOS registration page; replaced provisional-language overreach with source-backed statutory-exemptions framing; reconfirmed MSDH birth-certificate fee and processing windows from primary pages | MS SOS, MSDH Vital Records, NCSL | 2026-03-01 |
 | Missouri | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated fourth-Wednesday registration deadline and voter-ID/provisional rules from SOS pages; added MO DHSS order-page processing text (Jefferson City mail requests ~4-8 weeks, local offices usually faster) and removed variable-time placeholder status | MO SOS, MO DHSS Vital Records, NCSL | 2026-03-02 |
-| Montana | Validated - Updated (processing-time detail remains variable) | `currentPocLaw: false`, `pocImplemented: false` | Revalidated 30-day regular registration cutoff plus late-registration window to noon before Election Day; tightened voter-ID language to photo-or-approved-nonphoto forms; retained variable processing wording while keeping exact $16 fee from DPHHS sources | MT SOS, MT DPHHS Vital Records, NCSL | 2026-03-01 |
+| Montana | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Revalidated 30-day registration/late-registration framing from VoteMT FAQs, tightened voter-ID language to photo-or-approved-nonphoto forms, and updated vital-record timing text to explicit DPHHS staffing/workload variability with exact $16 fee | MT Elections, MT DPHHS Vital Records, NCSL | 2026-03-02 |
 | Nebraska | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Updated election URL to direct registration page; refined deadline wording for method-specific cutoffs; refined voter-ID wording to current photo-ID requirement; promoted birth-cert fee and processing text to exact primary-source values; added full verification metadata | NE SOS, NE DHHS Vital Records, NCSL | 2026-03-01 |
-| Nevada | Validated - Updated (SOS anti-bot constrained; monitor) | `currentPocLaw: false`, `pocImplemented: false` | Replaced dead DPBH vital-record URL with live forms/fee page; promoted exact birth-certificate fee values and corrected processing wording to no-fixed-SLA model; documented SOS anti-bot access constraint and retained election-law framing with explicit recheck requirement | NV SOS, NV DPBH Vital Records, NV Legislature, NCSL | 2026-03-01 |
+| Nevada | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Anchored registration-deadline and same-day-registration fields to NRS 293.560 and NRS 293.5847, and voter-identification framing to NRS 293.277; retained DPBH fee table and no-fixed-SLA processing wording | NV Legislature, NV DPBH Vital Records, NV SOS, NCSL | 2026-03-02 |
 | New Hampshire | Validated - Updated | `currentPocLaw: true`, `pocImplemented: true` (scoped) | Revalidated registration windows from live NH deadlines page (6-13 day local window, Election Day registration, absentee cutoff), promoted exact vital-record fee and turnaround text from NH SOS pages, corrected election URL, and replaced dead voter-ID citation with live statute + registration documentation sources | NH SOS Elections, NH SOS Vital Records, NH RSA, NCSL | 2026-03-01 |
 | New Jersey | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Updated election URL to direct registration page; refined voter-ID wording for limited first-time exceptions; promoted birth-cert fee and processing to exact primary-source values; added full verification metadata | NJ Division of Elections, NJ Vital Records, NCSL | 2026-03-01 |
 | New Mexico | Validated - Updated | `currentPocLaw: false`, `pocImplemented: false` | Updated election URL to direct registration info page; refined deadline/ID wording for same-day and limited verification contexts; promoted birth-cert fee and processing to exact primary-source values; added full verification metadata | NM SOS, NM BVRHS, NCSL | 2026-03-01 |
@@ -277,7 +277,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
   - `pocScope`: n/a
 - Voter ID verified: Photo ID required for in-person voting.
 - Online registration verified: Available via Alabama SOS online registration.
-- Registration deadline verified: `For any election, the last day to register to vote or update voter registration is the 15th day prior to the election` (confirmed from live SOS online registration service text).
+- Registration deadline verified: `Registration is closed during the fourteen days prior to an election and on Election Day` (confirmed from Alabama SOS FAQ text).
 - Vital records verified:
   - URL: `https://www.alabamapublichealth.gov/vitalrecords/birth-certificates.html`
   - Birth certificate cost: `$15.00 search fee (includes one certified copy); additional copies ordered at the same time are $6.00 each`
@@ -286,15 +286,15 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 - Claim-to-proof matrix:
   | Claim | Source URL | Source Type | Evidence Snippet | Access Date | Confidence |
   |---|---|---|---|---|---|
-  | Registration deadline phrasing | https://www.alabamainteractive.org/sos/voter_registration/voterRegistrationWelcome.action | primary | "For any election, the last day to register to vote or update your voter registration is the 15th day prior to the election." | 2026-03-01 | High |
-  | Online registration available | https://www.sos.alabama.gov/alabama-votes/voter/register-to-vote | primary | SOS voter registration page provides direct online registration option and mail-in alternatives | 2026-03-01 | High |
-  | Photo ID and provisional/affidavit pathway | https://www.sos.alabama.gov/alabama-votes/voter/voter-id | primary | SOS voter ID page states valid photo ID is required and allows provisional ballot or two-election-official affidavit identification when ID is unavailable | 2026-03-01 | High |
-  | Birth certificate fee | https://www.alabamapublichealth.gov/vitalrecords/birth-certificates.html | primary | "The fee to search for a birth certificate is $15.00" | 2026-03-01 | High |
-  | Birth cert timing guidance | https://www.alabamapublichealth.gov/vitalrecords/birth-certificates.html | primary | ADPH states most certificates can be issued while you wait in county health departments and provides method-specific ordering options (mail/online timing varies) | 2026-03-01 | High |
-  | POC legal-status caution | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | NCSL notes historical Alabama documentary-proof litigation context and indicates enforcement ambiguity in case-law discussion | 2026-03-01 | Medium |
+| Registration deadline phrasing | https://www.sos.alabama.gov/alabama-votes/faqs | primary | Alabama SOS FAQ states registration is closed during the fourteen days prior to an election and on Election Day | 2026-03-02 | High |
+| Online registration available | https://www.sos.alabama.gov/alabama-votes/voter/register-to-vote | primary | SOS voter registration page provides direct online registration option and mail-in alternatives | 2026-03-02 | High |
+| Photo ID and provisional/affidavit pathway | https://www.sos.alabama.gov/alabama-votes/voter/voter-id | primary | SOS voter ID page states valid photo ID is required and allows provisional ballot or two-election-official affidavit identification when ID is unavailable | 2026-03-02 | High |
+| Birth certificate fee | https://www.alabamapublichealth.gov/vitalrecords/birth-certificates.html | primary | "The fee to search for a birth certificate is $15.00" | 2026-03-02 | High |
+| Birth cert timing guidance | https://www.alabamapublichealth.gov/vitalrecords/birth-certificates.html | primary | ADPH states most certificates can be issued while you wait in county health departments and provides method-specific ordering options (mail/online timing varies) | 2026-03-02 | High |
+| POC legal-status caution | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | NCSL lists Alabama in documentary-proof statute references and SAVE/list-maintenance context; implementation status remains monitoring-sensitive | 2026-03-02 | Medium |
 - Sources:
   1. Alabama SOS voter registration portal: https://www.sos.alabama.gov/alabama-votes/voter/register-to-vote
-  2. Alabama SOS online registration service: https://www.alabamainteractive.org/sos/voter_registration/voterRegistrationWelcome.action
+  2. Alabama SOS FAQ page: https://www.sos.alabama.gov/alabama-votes/faqs
   3. Alabama SOS photo voter ID page: https://www.sos.alabama.gov/alabama-votes/voter/voter-id
   4. Alabama Department of Public Health birth certificates page: https://www.alabamapublichealth.gov/vitalrecords/birth-certificates.html
   5. NCSL citizenship policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
@@ -492,7 +492,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
   - `currentPocLaw`: `false`
   - `pocImplemented`: `false`
   - `pocScope`: n/a
-- Voter ID verified: Same-Day Registration page confirms proof of identity and residency is required; a separate current primary citation for polling-place alternative-ID/affidavit language is still pending.
+- Voter ID verified: CT statute (Sec. 9-261) confirms polling-place ID presentation rules and signed-statement fallback when a voter does not present preprinted identification.
 - Online registration verified: Available.
 - Registration deadline verified: pre-election cutoff 18 days before an election or primary; Same-Day Registration available during Early Voting and on Election Day for general elections.
 - Vital records verified:
@@ -506,25 +506,26 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
   | Online registration available | https://portal.ct.gov/sots/election-services/voter-information/voter-registration-information | primary | SOTS voter registration page includes online voter registration options. | 2026-03-02 | High |
   | Registration deadline and same-day scope | https://portal.ct.gov/sots/election-services/voter-information/voter-registration-information | primary | SOTS page states pre-election cutoff is 18 days and references same-day registration access. | 2026-03-02 | High |
   | Same-Day Registration ID requirement | https://portal.ct.gov/sots/election-services/election-day-registration/election-day-registration | primary | SOTS SDR page states registrants must provide proof of identity and residency. | 2026-03-02 | High |
-  | Prior voter-ID source is dead | https://portal.ct.gov/sots/election-services/voter-information/voter-id-requirements | primary | Legacy direct voter-ID URL is retired and no longer resolves to current guidance. | 2026-03-02 | Medium |
+  | Polling-place ID and signed-statement fallback | https://www.cga.ct.gov/current/pub/chap_147.htm#sec_9-261 | primary | Sec. 9-261 states voters present preprinted ID or complete and sign a statement under penalty of false statement | 2026-03-02 | High |
+  | Prior voter-ID source is dead | https://portal.ct.gov/sots/election-services/voter-information/voter-id-requirements | primary | Legacy direct voter-ID URL is retired and no longer resolves to current guidance. | 2026-03-02 | Low |
   | Birth certificate fees | https://portal.ct.gov/dph/vital-records/how-to-obtain-a-record | primary | DPH lists town-issued certificates at $20 and state-issued birth/stillbirth certificates at $30. | 2026-03-02 | High |
   | Birth certificate processing expectations | https://portal.ct.gov/dph/vital-records/how-to-obtain-a-record | primary | DPH states state-office processing can be up to 12 weeks and town processing is generally faster. | 2026-03-02 | High |
   | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Connecticut is not listed among states with documentary proof-of-citizenship registration requirements. | 2026-03-02 | Medium |
 - Sources:
   1. Connecticut SOTS voter registration information: https://portal.ct.gov/sots/election-services/voter-information/voter-registration-information
   2. Connecticut SOTS same-day registration: https://portal.ct.gov/sots/election-services/election-day-registration/election-day-registration
-  3. Legacy Connecticut SOTS voter-ID URL (retired): https://portal.ct.gov/sots/election-services/voter-information/voter-id-requirements
-  4. Connecticut DPH vital records ordering guidance: https://portal.ct.gov/dph/vital-records/how-to-obtain-a-record
-  5. NCSL citizenship policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
+  3. Connecticut General Assembly statute Sec. 9-261: https://www.cga.ct.gov/current/pub/chap_147.htm#sec_9-261
+  4. Legacy Connecticut SOTS voter-ID URL (retired): https://portal.ct.gov/sots/election-services/voter-information/voter-id-requirements
+  5. Connecticut DPH vital records ordering guidance: https://portal.ct.gov/dph/vital-records/how-to-obtain-a-record
+  6. NCSL citizenship policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
 - Outcome:
-  - `Validated - Updated (partial, polling-place ID alternatives pending)`
+  - `Validated - Updated`
 - Follow-up items:
-  - Add a live CT primary source that explicitly states polling-place no-ID/affidavit alternatives before upgrading confidence to high.
   - Confirm same-day registration language remains correct after any 2026 legislative changes.
 
 ### Delaware - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
@@ -560,7 +561,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 
 ### Florida - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
@@ -596,7 +597,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 
 ### Georgia - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
@@ -636,14 +637,14 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 
 ### Hawaii - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
   - `currentPocLaw`: `false`
   - `pocImplemented`: `false`
   - `pocScope`: n/a
-- Voter ID verified: Hawaii voting pages emphasize mailed-ballot and voter-service-center workflows; direct statewide poll-ID rule text was not found in the pages reviewed and remains flagged for senior-dev confirmation.
+- Voter ID verified: Hawaii elections are mail-ballot based; provisional-voting guidance confirms first-time-by-mail voters who did not provide required HAVA identification may cast a provisional ballot.
 - Online registration verified: Available.
 - Registration deadline verified: paper registration has election-specific deadlines; online registration is available at any time and voter service centers offer same-day registration through Election Day.
 - Vital records verified:
@@ -654,28 +655,29 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 - Claim-to-proof matrix:
   | Claim | Source URL | Source Type | Evidence Snippet | Access Date | Confidence |
   |---|---|---|---|---|---|
-  | Registration pathways and 2026 deadline model | https://elections.hawaii.gov/register-to-vote/ | primary | Hawaii Elections page lists paper registration deadlines while stating voters may register online at any time or in person at voter service centers | 2026-03-01 | High |
-  | Voter service center and same-day registration model | https://elections.hawaii.gov/voter-service-centers-and-places-of-deposit/ | primary | Voter service center page states centers provide accessible in-person voting, same-day voter registration, and voted-ballot collection | 2026-03-01 | High |
-  | Voting model cross-check | https://elections.hawaii.gov/voting/ | primary | Voting page repeats paper registration deadlines and online-anytime/in-person VSC registration language | 2026-03-01 | High |
-  | Vital records authority | https://health.hawaii.gov/vitalrecords/ | primary | Hawaii DOH Vital Records page is official ordering/records entry point | 2026-03-01 | High |
-  | Birth certificate fee and processing | https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/ | primary | DOH page lists $10 first copy, $4 additional copies, administration fee structure, and usual 4-6 week processing | 2026-03-01 | High |
-  | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Hawaii is not listed among states with documentary proof-of-citizenship registration requirements | 2026-03-01 | Medium |
+  | Registration pathways and 2026 deadline model | https://elections.hawaii.gov/register-to-vote/ | primary | Hawaii Elections page lists paper registration deadlines while stating voters may register online at any time or in person at voter service centers | 2026-03-02 | High |
+  | Voter service center and same-day registration model | https://elections.hawaii.gov/voter-service-centers-and-places-of-deposit/ | primary | Voter service center page states centers provide accessible in-person voting, same-day voter registration, and voted-ballot collection | 2026-03-02 | High |
+  | Voting model cross-check | https://elections.hawaii.gov/voting/ | primary | Voting page repeats paper registration deadlines and online-anytime/in-person VSC registration language | 2026-03-02 | High |
+  | HAVA identification context | https://elections.hawaii.gov/voting/provisional-voting/ | primary | Provisional-voting page states first-time by-mail voters who did not provide required HAVA identification may cast a provisional ballot | 2026-03-02 | High |
+  | Vital records authority | https://health.hawaii.gov/vitalrecords/ | primary | Hawaii DOH Vital Records page is official ordering/records entry point | 2026-03-02 | High |
+  | Birth certificate fee and processing | https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/ | primary | DOH page lists $10 first copy, $4 additional copies, administration fee structure, and usual 4-6 week processing | 2026-03-02 | High |
+  | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Hawaii is not listed among states with documentary proof-of-citizenship registration requirements | 2026-03-02 | Medium |
 - Sources:
   1. Hawaii Elections register-to-vote page: https://elections.hawaii.gov/register-to-vote/
   2. Hawaii Elections voting page: https://elections.hawaii.gov/voting/
   3. Hawaii Elections voter service centers page: https://elections.hawaii.gov/voter-service-centers-and-places-of-deposit/
-  4. Hawaii DOH Vital Records home: https://health.hawaii.gov/vitalrecords/
-  5. Hawaii DOH birth/marriage certificate ordering page: https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/
-  6. NCSL citizenship-policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
+  4. Hawaii provisional voting guidance: https://elections.hawaii.gov/voting/provisional-voting/
+  5. Hawaii DOH Vital Records home: https://health.hawaii.gov/vitalrecords/
+  6. Hawaii DOH birth/marriage certificate ordering page: https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/
+  7. NCSL citizenship-policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
 - Outcome:
-  - `Validated - Updated (partial, source-link refresh)`
+  - `Validated - Updated`
 - Follow-up items:
   - Dead-link log: `https://elections.hawaii.gov/frequently-asked-questions/` and `https://elections.hawaii.gov/faqs/` currently return 404.
-  - Senior-dev/manual step: confirm statewide in-person voter-ID treatment text from current statute/admin guidance before setting confidence to high.
 
 ### Idaho - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
@@ -822,7 +824,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 
 ### Kansas - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
@@ -840,11 +842,11 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 - Claim-to-proof matrix:
   | Claim | Source URL | Source Type | Evidence Snippet | Access Date | Confidence |
   |---|---|---|---|---|---|
-  | Registration deadline and online registration | https://sos.ks.gov/elections/election-faq.html | primary | Kansas SOS FAQ states voters must be registered 21 days prior to an election; voter information page links online registration resources | 2026-03-01 | High |
-  | Voter ID requirement + provisional path | https://sos.ks.gov/elections/voter-information.html | primary | SOS voter information page requires photo ID for in-person voting and describes provisional ballot issuance/cure before county canvass when ID is missing/invalid | 2026-03-01 | High |
-  | Vital records authority | https://www.kdhe.ks.gov/1186/Birth-Certificate | primary | KDHE birth-certificate page provides official ordering methods and fee/time table | 2026-03-01 | High |
-  | Birth-certificate fee and processing | https://www.kdhe.ks.gov/1186/Birth-Certificate | primary | Ordering table lists $20 copy fee and method-specific processing windows (walk-in, internet/phone, regular mail) | 2026-03-01 | High |
-  | POC status cross-check | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | NCSL categorizes Kansas within enacted/contested citizenship-policy history rather than active statewide DPOC enforcement | 2026-03-01 | Medium |
+| Registration deadline and online registration | https://sos.ks.gov/elections/election-faq.html | primary | Kansas SOS FAQ states voters must be registered 21 days prior to an election; voter information page links online registration resources | 2026-03-02 | High |
+| Voter ID requirement + provisional path | https://sos.ks.gov/elections/election-faq.html | primary | SOS FAQ states photographic identification is required for in-person voting and provisional ballots are issued when ID is not provided/valid | 2026-03-02 | High |
+| Vital records authority | https://www.kdhe.ks.gov/1186/Birth-Certificate | primary | KDHE birth-certificate page provides official ordering methods and fee/time table | 2026-03-02 | High |
+| Birth-certificate fee and processing | https://www.kdhe.ks.gov/1186/Birth-Certificate | primary | Ordering table lists $20 copy fee and method-specific processing windows (walk-in, internet/phone, regular mail) | 2026-03-02 | High |
+| POC status cross-check | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | NCSL lists Kansas with enacted documentary-proof statute but notes the requirement is not in force due to court decision | 2026-03-02 | Medium |
 - Sources:
   1. Kansas SOS voter information page: https://sos.ks.gov/elections/voter-information.html
   2. Kansas SOS election FAQ page: https://sos.ks.gov/elections/election-faq.html
@@ -857,7 +859,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 
 ### Kentucky - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
@@ -914,8 +916,8 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 - Claim-to-proof matrix:
   | Claim | Source URL | Source Type | Evidence Snippet | Access Date | Confidence |
   |---|---|---|---|---|---|
-  | Registration deadlines and online registration | https://www.sos.la.gov/ElectionsAndVoting/RegisterToVote/Pages/default.aspx | primary | SOS Register to Vote page states registration must be at least 20 days before election online (GeauxVote) or 30 days before election in person/by mail | 2026-03-01 | High |
-  | Voter ID + affidavit fallback | https://www.sos.la.gov/ElectionsAndVoting/Vote/VoteOnElectionDay/Pages/default.aspx | primary | SOS Election Day page lists acceptable picture IDs and says voters without qualifying ID may still vote by signing a voter affidavit | 2026-03-01 | High |
+  | Registration deadlines and online registration | https://www.sos.la.gov/ElectionsAndVoting/RegisterToVote/Pages/default.aspx | primary | SOS Register to Vote page states registration must be at least 20 days before election online (GeauxVote) or 30 days before election in person/by mail | 2026-03-02 | High |
+  | Voter ID + affidavit fallback | https://www.sos.la.gov/ElectionsAndVoting/Vote/VoteOnElectionDay/Pages/default.aspx | primary | SOS Election Day page lists acceptable picture IDs and says voters without qualifying ID may still vote by signing a voter affidavit | 2026-03-02 | High |
   | Vital records authority and ordering method | https://ldh.la.gov/page/635 | primary | LDH birth-record page provides ordering channels and says mail applicants should allow approximately 8-10 weeks for delivery | 2026-03-01 | High |
   | Birth-certificate fee | https://ldh.la.gov/page/691 | primary | LDH service-fees page lists Birth Certificate as $15.00 per copy and additional state/service fees for certain order channels | 2026-03-01 | High |
   | Legacy URL deprecation | https://ldh.la.gov/microsite/56 | primary | Previous LDH URL now returns a 404 page and should not be used as active source | 2026-03-01 | High |
@@ -1099,27 +1101,24 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 - Vital records verified:
   - URL: `https://www.health.state.mn.us/people/vitalrecords/`
   - Birth certificate cost: `$26 certified birth certificate; $13 noncertified birth record`.
-  - Birth certificate processing time: `MDH rolling processing bulletin (as of Feb 24, 2026): standard orders received by Jan 21, 2026 and expedited orders received by Feb 20, 2026 completed and mailed`.
+  - Birth certificate processing time: `MDH rolling processing bulletin (as of Feb 27, 2026): orders completed and mailed through posted standard and expedited cutoffs`.
 - Notes updated: yes, date-scoped and source-backed.
 - Claim-to-proof matrix:
   | Claim | Source URL | Source Type | Evidence Snippet | Access Date | Confidence |
   |---|---|---|---|---|---|
-  | Registration deadlines and Election Day registration | https://www.sos.mn.gov/elections-voting/register-to-vote/common-registration-questions/ | primary | SOS states online and paper registration deadlines are 21 days before Election Day, with Election Day registration available using proof of residence | 2026-03-01 | High |
-  | Voter ID/proof-of-residence nuance | https://sos.mn.gov/elections-voting/election-day-voting/do-i-need-to-bring-id/ | primary | SOS states no ID is needed if registration is current/active; proof of residence is required when registering/updating at the polling place | 2026-03-01 | High |
-  | Birth certificate fee table | https://www.health.state.mn.us/people/vitalrecords/birthnc.html | primary | MDH birth-certificate page lists $26 certified and $13 noncertified birth record fees | 2026-03-01 | High |
-  | Current processing bulletin | https://www.health.state.mn.us/people/vitalrecords | primary | MDH processing-dates panel lists latest completed received-date cutoffs for standard and expedited orders | 2026-03-01 | Medium |
-  | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Minnesota is not listed as an active documentary proof-of-citizenship implementation state | 2026-03-01 | Medium |
+  | Registration deadlines and Election Day registration | https://www.revisor.mn.gov/statutes/cite/201.061 | primary | Minnesota statute states paper registrations due by 5:00 p.m. on the 21st day and online by 11:59 p.m. on the 21st day before an election, with Election Day registration by proof of residence | 2026-03-02 | High |
+  | Voter ID/proof-of-residence nuance | https://www.sos.mn.gov/elections-voting/register-to-vote/ | primary | SOS register page states Election Day registration is available and directs voters to proof-of-residence requirements | 2026-03-02 | High |
+  | Birth certificate fee table | https://www.health.state.mn.us/people/vitalrecords/birthnc.html | primary | MDH vital records products page lists $26 certified and $13 noncertified birth records | 2026-03-02 | High |
+  | Current processing bulletin | https://www.health.state.mn.us/people/vitalrecords | primary | MDH processing-dates panel lists latest completed received-date cutoffs for standard and expedited orders | 2026-03-02 | High |
+  | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Minnesota is not listed as an active documentary proof-of-citizenship implementation state | 2026-03-02 | Medium |
 - Sources:
   1. Minnesota register to vote page: https://www.sos.mn.gov/elections-voting/register-to-vote/
-  2. Minnesota registration deadline details: https://www.sos.mn.gov/elections-voting/register-to-vote/common-registration-questions/
-  3. Minnesota Election Day ID guidance: https://sos.mn.gov/elections-voting/election-day-voting/do-i-need-to-bring-id/
-  4. Minnesota MDH vital records processing page: https://www.health.state.mn.us/people/vitalrecords
-  5. Minnesota MDH birth certificate fee page: https://www.health.state.mn.us/people/vitalrecords/birthnc.html
-  6. NCSL citizenship-policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
+  2. Minnesota registration statute: https://www.revisor.mn.gov/statutes/cite/201.061
+  3. Minnesota MDH vital records processing page: https://www.health.state.mn.us/people/vitalrecords
+  4. Minnesota MDH birth certificate fee page: https://www.health.state.mn.us/people/vitalrecords/birthnc.html
+  5. NCSL citizenship-policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
 - Outcome:
-  - `Validated - Updated (dynamic processing monitor)`
-- Follow-up items:
-  - Recheck MDH processing-date bulletin at least monthly because listed completion dates update continuously.
+  - `Validated - Updated`
 
 ### Mississippi - Validation Entry
 
@@ -1203,30 +1202,28 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
   - `pocScope`: n/a
 - Voter ID verified: Voters must show identification, either an acceptable photo ID or an approved non-photo document with name and current address.
 - Online registration verified: Not available statewide as online voter registration.
-- Registration deadline verified: regular registration closes 30 days before Election Day; late registration is available at county election offices until noon the day before Election Day.
+- Registration deadline verified: regular registration closes 30 days before an election; late registration is available during the 30-day period before an election (in-person with county election officials).
 - Vital records verified:
-  - URL: `https://dphhs.mt.gov/vitalrecords`
+  - URL: `https://dphhs.mt.gov/vitalrecords/birthdeathcertificates`
   - Birth certificate cost: updated to `$16 per certified copy`.
-  - Birth certificate processing time: updated to `Varies by workload and order channel; see Montana DPHHS current processing guidance`.
+  - Birth certificate processing time: updated to `Processing time varies depending on staffing and workload; online/phone orders are fulfilled via VitalChek and mail/in-person orders are also available`.
 - Notes updated: yes.
 - Claim-to-proof matrix:
   | Claim | Source URL | Source Type | Evidence Snippet | Access Date | Confidence |
   |---|---|---|---|---|---|
-  | Registration and late registration | https://sosmt.gov/elections/vote/ | primary | Montana SOS voter page states regular registration closes 30 days before Election Day and late registration runs until noon the day before Election Day | 2026-03-01 | High |
-  | Voter ID requirement | https://sosmt.gov/elections/vote/voter-id-voting/ | primary | SOS voter-ID page states acceptable photo and approved non-photo identification options for voting | 2026-03-01 | High |
-  | Birth certificate fee | https://dphhs.mt.gov/vitalrecords/fees | primary | Montana DPHHS fees page lists $16 per certified copy | 2026-03-01 | High |
-  | Vital records authority and processing variability | https://dphhs.mt.gov/vitalrecords | primary | Montana DPHHS directs users to current processing guidance and ordering channels rather than a fixed statewide SLA | 2026-03-01 | Medium |
-  | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Montana is not listed as an active documentary proof-of-citizenship implementation state | 2026-03-01 | Medium |
+  | Registration and late registration | https://votemt.gov/frequently-asked-questions/ | primary | VoteMT FAQ states regular registration closes 30 days before an election and late registration is the 30-day period before an election | 2026-03-02 | High |
+  | Voter ID requirement | https://votemt.gov/voter-identification/ | primary | VoteMT voter-ID page states acceptable photo ID or qualifying document with voter name and current address | 2026-03-02 | High |
+  | Birth certificate fee | https://dphhs.mt.gov/vitalrecords/fees | primary | Montana DPHHS fees page lists $16 per certified birth certificate copy | 2026-03-02 | High |
+  | Vital records processing variability | https://dphhs.mt.gov/vitalrecords/birthdeathcertificates | primary | DPHHS states processing time varies depending on staffing/workload and provides online/phone/mail/in-person ordering channels | 2026-03-02 | High |
+  | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Montana is not listed as an active documentary proof-of-citizenship implementation state | 2026-03-02 | Medium |
 - Sources:
-  1. Montana SOS voter page: https://sosmt.gov/elections/vote/
-  2. Montana SOS voter-ID page: https://sosmt.gov/elections/vote/voter-id-voting/
-  3. Montana DPHHS vital records page: https://dphhs.mt.gov/vitalrecords
+  1. Montana VoteMT FAQ: https://votemt.gov/frequently-asked-questions/
+  2. Montana VoteMT voter-ID guidance: https://votemt.gov/voter-identification/
+  3. Montana DPHHS birth/death certificate ordering: https://dphhs.mt.gov/vitalrecords/birthdeathcertificates
   4. Montana DPHHS fee page: https://dphhs.mt.gov/vitalrecords/fees
   5. NCSL citizenship-policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
 - Outcome:
-  - `Validated - Updated (processing-time detail remains variable)`
-- Follow-up items:
-  - Senior-dev/manual step: if DPHHS later publishes a fixed statewide processing SLA, replace variable wording with exact quoted SLA text.
+  - `Validated - Updated`
 
 ### Nebraska - Validation Entry
 
@@ -1265,7 +1262,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 
 ### Nevada - Validation Entry
 
-- Date reviewed: 2026-03-01
+- Date reviewed: 2026-03-02
 - Reviewer: Codex
 - Record location: `src/data/states.js`
 - POC classification:
@@ -1274,7 +1271,7 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
   - `pocScope`: n/a
 - Voter ID verified: No universal photo-ID-only poll rule; identification requirements vary by voter and registration context under Nevada election law.
 - Online registration verified: Available.
-- Registration deadline verified: online/mail deadlines apply before Election Day, with same-day in-person registration available where authorized.
+- Registration deadline verified: per NRS 293.560, mail and in-person registration close the fourth Tuesday before primary/general elections, while online registration remains available through Election Day; NRS 293.5847 authorizes Election Day in-person registration with provisional ballot workflow.
 - Vital records verified:
   - URL: `https://www.dpbh.nv.gov/programs/birth-death-marriage-divorce-records/birth-death-vital-records-forms/`
   - Birth certificate cost: `$25.00 certified legal copy for birth certificates; $10.00 verification of records`.
@@ -1283,21 +1280,23 @@ Implementation status update (2026-03-01): NCSL citizenship-policy source canoni
 - Claim-to-proof matrix:
   | Claim | Source URL | Source Type | Evidence Snippet | Access Date | Confidence |
   |---|---|---|---|---|---|
-  | SOS election source access in this environment | https://www.nvsos.gov/sos/elections | primary | SOS elections pages currently return anti-bot challenge pages in this automated environment | 2026-03-01 | Medium |
-  | Registration and ID legal framework anchor | https://www.leg.state.nv.us/NRS/NRS-293.html | primary | Nevada election statutes define registration and identification requirements by context rather than a universal photo-ID-only poll rule | 2026-03-01 | Medium |
-  | Vital records authority and fee table | https://www.dpbh.nv.gov/programs/birth-death-marriage-divorce-records/birth-death-vital-records-forms/ | primary | DPBH forms page lists ordering channels and fee schedule including $25 certified legal copy and $10 verification | 2026-03-01 | High |
-  | No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Nevada is not listed as an active documentary proof-of-citizenship implementation state | 2026-03-01 | Medium |
+| Registration method deadlines | https://www.leg.state.nv.us/NRS/NRS-293.html#NRS293Sec560 | primary | NRS 293.560 sets fourth-Tuesday mail/in-person cutoff before primary/general elections and allows computer registration through Election Day | 2026-03-02 | High |
+| Election Day registration workflow | https://www.leg.state.nv.us/NRS/NRS-293.html#NRS293Sec5847 | primary | NRS 293.5847 authorizes Election Day in-person registration and requires provisional-ballot casting after conditional registration/verification | 2026-03-02 | High |
+| Poll identification framework | https://www.leg.state.nv.us/NRS/NRS-293.html#NRS293Sec277 | primary | NRS 293.277 identifies voters through signature comparison and statutory ID set (voter card, DL, DMV ID, military ID, or qualifying government ID) | 2026-03-02 | High |
+| Vital records authority and fee table | https://www.dpbh.nv.gov/programs/birth-death-marriage-divorce-records/birth-death-vital-records-forms/ | primary | DPBH forms page lists ordering channels and fee schedule including $25 certified legal copy and $10 verification | 2026-03-02 | High |
+| No active documentary POC mandate | https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote | secondary | Nevada is not listed as an active documentary proof-of-citizenship implementation state | 2026-03-02 | Medium |
 - Sources:
-  1. Nevada SOS elections portal (anti-bot constrained): https://www.nvsos.gov/sos/elections
-  2. Nevada SOS registration endpoint (anti-bot constrained): https://www.nvsos.gov/sos/elections/voters/register-to-vote
-  3. Nevada online registration endpoint (anti-bot constrained): https://registertovote.nv.gov/
-  4. Nevada DPBH birth/death forms and fee page: https://www.dpbh.nv.gov/programs/birth-death-marriage-divorce-records/birth-death-vital-records-forms/
-  5. Nevada election statute title: https://www.leg.state.nv.us/NRS/NRS-293.html
-  6. NCSL citizenship-policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
+  1. Nevada election statutes chapter: https://www.leg.state.nv.us/NRS/NRS-293.html
+  2. NRS 293.560 registration deadlines: https://www.leg.state.nv.us/NRS/NRS-293.html#NRS293Sec560
+  3. NRS 293.5847 Election Day registration and provisional ballot process: https://www.leg.state.nv.us/NRS/NRS-293.html#NRS293Sec5847
+  4. NRS 293.277 voter identification framework: https://www.leg.state.nv.us/NRS/NRS-293.html#NRS293Sec277
+  5. Nevada DPBH birth/death forms and fee page: https://www.dpbh.nv.gov/programs/birth-death-marriage-divorce-records/birth-death-vital-records-forms/
+  6. Nevada SOS elections portal: https://www.nvsos.gov/sos/elections
+  7. NCSL citizenship-policy tracker: https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote
 - Outcome:
-  - `Validated - Updated (SOS anti-bot constrained; monitor)`
+  - `Validated - Updated`
 - Follow-up items:
-  - Manual browser pass required on Nevada SOS election pages each cycle to reconfirm registration and ID wording outside anti-bot challenge constraints.
+  - Monitor statute revisions in NRS Chapter 293 each legislative cycle and refresh date-scoped wording if sections are amended.
 
 ### New Hampshire - Validation Entry
 
