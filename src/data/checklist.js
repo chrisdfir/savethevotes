@@ -1,12 +1,5 @@
 export const checklistSteps = [
   {
-    title: "Check your voter registration",
-    description:
-      "Confirm you're registered and your information is up to date. Don't wait until election season — databases are updated regularly.",
-    url: "https://vote.gov/",
-    urlLabel: "Check at Vote.gov",
-  },
-  {
     title: "Locate your proof-of-citizenship documents",
     description:
       "Find your passport, birth certificate, or naturalization certificate. You'll need originals — photocopies would not be accepted under the SAVE Act.",
