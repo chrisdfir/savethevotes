@@ -25,21 +25,6 @@ function isVolatilePlaceholder(value) {
   );
 }
 
-function formatIsoDate(isoDate) {
-  if (typeof isoDate !== "string") {
-    return "Unknown";
-  }
-  const parsed = new Date(isoDate);
-  if (Number.isNaN(parsed.getTime())) {
-    return isoDate;
-  }
-  return parsed.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
-
 function getPocStatus(state) {
   if (state.currentPocLaw && state.pocImplemented) {
     return { label: "Yes — Active", color: "text-danger", bgColor: "bg-danger/10 border-danger/20" };
@@ -408,16 +393,6 @@ export default function StateGuide({ stateName, state, slug }) {
           </span>
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold bg-surface-elevated text-text-muted border border-border">
             ID: {state.voterIdType}
-          </span>
-          <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold border ${
-            state.needsReview
-              ? "bg-warning/10 text-warning border-warning/30"
-              : "bg-success/10 text-success border-success/30"
-          }`}>
-            {state.needsReview ? "Status: Needs Review" : "Status: Verified"}
-          </span>
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-bold bg-surface-elevated text-text-muted border border-border">
-            Last verified: {formatIsoDate(state.lastVerified)}
           </span>
         </div>
       </header>

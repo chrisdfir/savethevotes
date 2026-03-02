@@ -27,7 +27,7 @@ export default function Timeline() {
         Bill Status Timeline
       </h2>
       <p className="text-text-secondary mb-8">
-        How the SAVE Act has progressed through Congress.
+        How SAVE Act and related legislation have progressed through Congress.
       </p>
 
       <motion.ol

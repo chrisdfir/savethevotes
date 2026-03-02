@@ -96,6 +96,10 @@ export default function DocumentCards() {
           U.S. citizenship when registering to vote. Only a narrow set of
           federal documents are accepted.
         </p>
+        <p className="text-text-secondary leading-relaxed mb-4">
+          In the latest House-passed 2026 package, Congress.gov summaries also
+          describe additional voter-ID requirements for in-person voting.
+        </p>
         <p className="text-text-secondary leading-relaxed">
           Standard driver&rsquo;s licenses, REAL IDs, military IDs, and tribal
           IDs would{" "}

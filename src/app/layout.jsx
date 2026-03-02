@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import Link from "next/link";
 import { Instrument_Serif, JetBrains_Mono, Inter } from "next/font/google";
 import ThemeToggle from "@/components/ThemeToggle";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -41,7 +42,7 @@ export const metadata = {
       "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides for all 50 states.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.savethevotes.org/og",
         width: 1200,
         height: 630,
         alt: "Save the Votes — Citizen Preparedness Resource",
@@ -53,7 +54,7 @@ export const metadata = {
     title: "Save the Votes — Citizen Preparedness Resource",
     description:
       "Find out exactly what documents you need to vote under the SAVE Act. State-by-state guides for all 50 states.",
-    images: ["/og-image.png"],
+    images: ["https://www.savethevotes.org/og"],
   },
   alternates: {
     canonical: "https://savethevotes.org",
@@ -86,9 +87,9 @@ export default function RootLayout({ children }) {
           Skip to content
         </a>
         <nav aria-label="Site navigation" className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-surface/80 backdrop-blur-md border-b border-border">
-          <span className="font-mono text-sm font-bold tracking-wider text-accent uppercase">
+          <Link href="/" className="font-mono text-sm font-bold tracking-wider text-accent uppercase">
             Save the Votes
-          </span>
+          </Link>
           <ThemeToggle />
         </nav>
         <main id="main-content" className="pt-14">
