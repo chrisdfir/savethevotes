@@ -2,7 +2,10 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export async function GET() {
+export async function GET(request) {
+  const { searchParams } = new URL(request.url);
+  const stateName = searchParams.get("state");
+
   return new ImageResponse(
     (
       <div
@@ -39,20 +42,20 @@ export async function GET() {
             SAVETHEVOTES.ORG
           </div>
 
-          {/* Brand name */}
+          {/* Brand name or state name */}
           <div
             style={{
               fontFamily: "Georgia, serif",
-              fontSize: "88px",
+              fontSize: stateName ? "72px" : "88px",
               fontWeight: 400,
               lineHeight: 1.05,
               color: "#f1f5f9",
             }}
           >
-            Save the Votes
+            {stateName || "Save the Votes"}
           </div>
 
-          {/* Subtitle / what it is */}
+          {/* Subtitle */}
           <div
             style={{
               fontFamily: "monospace",
@@ -63,7 +66,7 @@ export async function GET() {
               color: "#94a3b8",
             }}
           >
-            Citizen Preparedness Resource
+            {stateName ? "Voter Registration Guide" : "Citizen Preparedness Resource"}
           </div>
 
           {/* Value prop */}
@@ -75,7 +78,9 @@ export async function GET() {
               maxWidth: "540px",
             }}
           >
-            State-by-state guides to the documents you need to vote. All 50 states.
+            {stateName
+              ? `Birth certificate costs, voter ID rules, election office links, and deadlines for ${stateName}.`
+              : "State-by-state guides to the documents you need to vote. All 50 states."}
           </div>
         </div>
 

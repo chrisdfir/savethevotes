@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import usaMap from "@svg-maps/usa";
 import { stateData } from "@/data/states";
 import { stateToSlug } from "@/data/stateSlugs";
+import { trackStateView } from "@/lib/analytics";
 
 /**
  * Map from @svg-maps/usa location names to stateData keys.
@@ -103,11 +104,12 @@ export default function USMap({ highlight = null }) {
               transition-all duration-150 cursor-pointer
             `}
             aria-label={`View ${loc.stateName} voter guide`}
+            aria-describedby="map-tooltip"
             tabIndex={0}
             role="link"
-            onClick={() => router.push(`/${loc.slug}`)}
+            onClick={() => { trackStateView(loc.stateName); router.push(`/${loc.slug}`); }}
             onKeyDown={(e) => {
-              if (e.key === "Enter") router.push(`/${loc.slug}`);
+              if (e.key === "Enter") { trackStateView(loc.stateName); router.push(`/${loc.slug}`); }
             }}
             onMouseEnter={() => setHoveredState(loc.name)}
             onMouseMove={handleMouseMove}
@@ -119,33 +121,38 @@ export default function USMap({ highlight = null }) {
       </motion.svg>
 
       {/* Tooltip */}
-      {hoveredInfo && (
-        <div
-          className="absolute pointer-events-none z-20 bg-surface border border-border rounded-lg shadow-lg px-3 py-2 text-sm -translate-x-1/2 -translate-y-full"
-          style={{
-            left: tooltipPos.x,
-            top: tooltipPos.y - 12,
-          }}
-        >
-          <span className="font-semibold text-text">
-            {hoveredInfo.stateName}
-          </span>{" "}
-          <span className="text-text-secondary text-xs">
-            ({hoveredInfo.abbr})
-          </span>
-          <div
-            className={`text-xs mt-0.5 ${
-              hoveredInfo.category === "active"
-                ? "text-red-600 dark:text-red-400"
-                : hoveredInfo.category === "onbooks"
-                  ? "text-amber-600 dark:text-amber-400"
-                  : "text-text-secondary"
-            }`}
-          >
-            {hoveredInfo.label}
-          </div>
-        </div>
-      )}
+      <div
+        id="map-tooltip"
+        role="tooltip"
+        aria-live="polite"
+        className={`absolute pointer-events-none z-20 bg-surface border border-border rounded-lg shadow-lg px-3 py-2 text-sm -translate-x-1/2 -translate-y-full ${hoveredInfo ? "" : "sr-only"}`}
+        style={hoveredInfo ? {
+          left: tooltipPos.x,
+          top: tooltipPos.y - 12,
+        } : undefined}
+      >
+        {hoveredInfo && (
+          <>
+            <span className="font-semibold text-text">
+              {hoveredInfo.stateName}
+            </span>{" "}
+            <span className="text-text-secondary text-xs">
+              ({hoveredInfo.abbr})
+            </span>
+            <div
+              className={`text-xs mt-0.5 ${
+                hoveredInfo.category === "active"
+                  ? "text-red-600 dark:text-red-400"
+                  : hoveredInfo.category === "onbooks"
+                    ? "text-amber-600 dark:text-amber-400"
+                    : "text-text-secondary"
+              }`}
+            >
+              {hoveredInfo.label}
+            </div>
+          </>
+        )}
+      </div>
 
       {/* Legend */}
       <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-sm text-text-secondary">

@@ -23,6 +23,12 @@ export default function sitemap() {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: "https://savethevotes.org/terms",
+      lastModified: SITE_LAST_UPDATED,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
     ...states,
   ];
 }

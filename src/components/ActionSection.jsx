@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { callingScript, emailTemplate } from "@/data/scripts";
+import { trackSectionExpand, trackCTA, trackOutboundClick } from "@/lib/analytics";
 
 function ChevronIcon({ open }) {
   return (
@@ -112,7 +113,11 @@ export default function ActionSection() {
   const shouldReduceMotion = useReducedMotion();
   const [openPanel, setOpenPanel] = useState(null);
 
-  const toggle = (id) => setOpenPanel((prev) => (prev === id ? null : id));
+  const toggle = (id) => {
+    const isOpening = openPanel !== id;
+    setOpenPanel((prev) => (prev === id ? null : id));
+    if (isOpening) trackSectionExpand(id);
+  };
 
   return (
     <section id="act" className="scroll-target max-w-5xl mx-auto px-6 py-12">
@@ -134,6 +139,7 @@ export default function ActionSection() {
             href="https://www.senate.gov/senators/senators-contact.htm"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCTA("find_senators")}
             className="inline-block rounded-lg bg-accent/15 border border-accent/40 px-8 py-4 text-accent font-semibold text-lg hover:bg-accent/25 transition-colors"
           >
             Find Your Senators &rarr;

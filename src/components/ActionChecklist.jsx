@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { checklistSteps } from "@/data/checklist";
+import { trackCTA, trackOutboundClick } from "@/lib/analytics";
 
 const containerVariants = {
   hidden: {},
@@ -50,6 +51,7 @@ export default function ActionChecklist() {
           href="https://vote.gov/"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackCTA("check_voter_registration")}
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-mono text-sm font-bold hover:bg-accent-dark transition-colors"
         >
           Check at Vote.gov
@@ -100,6 +102,7 @@ export default function ActionChecklist() {
                   href={step.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackOutboundClick(step.url, step.urlLabel)}
                   className="inline-flex items-center gap-1 text-accent hover:text-accent-light text-sm font-medium mt-2 transition-colors"
                 >
                   {step.urlLabel}

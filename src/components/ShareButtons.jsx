@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { trackShare } from "@/lib/analytics";
 
 const SITE_URL = "https://savethevotes.org";
 const SHARE_TEXT =
@@ -9,7 +10,7 @@ const SHARE_TEXT =
 function ShareButton({ href, onClick, label, children, className = "" }) {
   const Tag = href ? "a" : "button";
   const props = href
-    ? { href, target: "_blank", rel: "noopener noreferrer" }
+    ? { href, target: "_blank", rel: "noopener noreferrer", onClick }
     : { onClick };
 
   return (
@@ -40,6 +41,7 @@ export default function ShareButtons() {
       document.body.removeChild(textarea);
     }
     setCopied(true);
+    trackShare("copy_link");
     setTimeout(() => setCopied(false), 2000);
   }, []);
 
@@ -56,6 +58,7 @@ export default function ShareButtons() {
       <ShareButton
         href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
         label="Share on Facebook"
+        onClick={() => trackShare("facebook")}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -66,6 +69,7 @@ export default function ShareButtons() {
       <ShareButton
         href={`https://x.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`}
         label="Share on X"
+        onClick={() => trackShare("twitter")}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -76,6 +80,7 @@ export default function ShareButtons() {
       <ShareButton
         href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${SHARE_TEXT} ${SITE_URL}`)}`}
         label="Share on Bluesky"
+        onClick={() => trackShare("bluesky")}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 568 501" fill="currentColor">
           <path d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.21C491.866-1.611 568-28.906 568 57.947c0 17.346-9.945 145.713-15.778 166.555-20.275 72.453-94.155 90.933-159.875 79.748C507.222 323.8 536.444 388.56 473.333 453.32c-119.86 122.992-172.272-30.859-185.702-70.281-2.462-7.227-3.614-10.608-3.631-7.733-.017-2.875-1.169.506-3.631 7.733-13.43 39.422-65.842 193.273-185.702 70.281-63.111-64.76-33.89-129.52 80.986-149.071-65.72 11.185-139.6-7.295-159.875-79.748C9.945 203.659 0 75.291 0 57.946 0-28.906 76.135-1.612 123.121 33.664z" />
@@ -86,6 +91,7 @@ export default function ShareButtons() {
       <ShareButton
         href={`https://www.reddit.com/submit?url=${encodedUrl}&title=${encodeURIComponent("Save the Votes — What documents you need under the SAVE Act")}`}
         label="Share on Reddit"
+        onClick={() => trackShare("reddit")}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <circle cx="9" cy="14" r="1.5" />
@@ -99,6 +105,7 @@ export default function ShareButtons() {
       <ShareButton
         href={`mailto:?subject=${encodeURIComponent("Save the Votes — What documents you need under the SAVE Act")}&body=${encodeURIComponent(`${SHARE_TEXT}\n\n${SITE_URL}`)}`}
         label="Share via email"
+        onClick={() => trackShare("email")}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />

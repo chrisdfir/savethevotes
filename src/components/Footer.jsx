@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SITE_LAST_UPDATED_DISPLAY } from "@/data/siteConfig";
 
+
 export default function Footer() {
   return (
     <footer className="border-t border-border mt-16">
@@ -15,7 +16,11 @@ export default function Footer() {
         </p>
         <p className="mt-3 flex items-center justify-center gap-3">
           <Link href="/privacy" className="font-mono text-xs text-text-muted hover:text-accent transition-colors">
-            Privacy Policy
+            Privacy
+          </Link>
+          <span className="text-border">|</span>
+          <Link href="/terms" className="font-mono text-xs text-text-muted hover:text-accent transition-colors">
+            Terms
           </Link>
           <span className="text-border">|</span>
           <a href="mailto:info@savethevotes.org" className="font-mono text-xs text-text-muted hover:text-accent transition-colors">
