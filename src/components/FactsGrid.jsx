@@ -43,7 +43,7 @@ const facts = [
   {
     stat: "~4",
     label: "States with active documentary proof-of-citizenship rules (estimate)",
-    sub: "As of Feb 28, 2026: AZ, NH, OH (BMV only), WY",
+    sub: "As of Mar 8, 2026: AZ, NH, OH (BMV only), WY; GA, IN, TN use conditional verification",
     source: "NCSL",
     sourceUrl:
       "https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote",
@@ -76,7 +76,7 @@ export default function FactsGrid() {
         far more than they prevent fraud.
       </p>
       <p className="font-mono text-xs text-text-muted mb-8">
-        Last verified: February 28, 2026
+        Last verified: March 8, 2026
       </p>
 
       <motion.div
