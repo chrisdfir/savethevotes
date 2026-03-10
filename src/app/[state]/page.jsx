@@ -12,10 +12,12 @@ export async function generateMetadata({ params }) {
   const { state: slug } = await params;
   const stateName = slugToState(slug);
   if (!stateName) return {};
-  const state = stateData[stateName];
 
+  const state = stateData[stateName];
   const pocSnippet = state.currentPocLaw
-    ? (state.pocImplemented ? "Proof-of-citizenship requirement is active." : "POC law on books but not enforced.")
+    ? state.pocImplemented
+      ? "Proof-of-citizenship requirement is active."
+      : "POC law on books but not enforced."
     : "No proof-of-citizenship requirement.";
   const description = `${stateName} voter registration guide: birth certificate costs, voter ID rules, deadlines, and election office links. ${pocSnippet} Free nonpartisan resource.`;
   const ogDescription = `${stateName} voter registration guide: birth certificate costs, voter ID rules, proof-of-citizenship status, election office links, and deadlines. Free nonpartisan resource.`;
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }) {
     title: `${stateName} Voter Registration Guide`,
     description,
     openGraph: {
-      title: `${stateName} Voting Guide — Save the Votes`,
+      title: `${stateName} Voting Guide - Save the Votes`,
       description: ogDescription,
       url: `https://savethevotes.org/${slug}`,
       siteName: "Save the Votes",
@@ -34,15 +36,17 @@ export async function generateMetadata({ params }) {
           url: `https://savethevotes.org/og?state=${encodeURIComponent(stateName)}`,
           width: 1200,
           height: 630,
-          alt: `${stateName} Voter Registration Guide — Save the Votes`,
+          alt: `${stateName} Voter Registration Guide - Save the Votes`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${stateName} Voting Guide — Save the Votes`,
+      title: `${stateName} Voting Guide - Save the Votes`,
       description: ogDescription,
-      images: [`https://savethevotes.org/og?state=${encodeURIComponent(stateName)}`],
+      images: [
+        `https://savethevotes.org/og?state=${encodeURIComponent(stateName)}`,
+      ],
     },
     alternates: {
       canonical: `https://savethevotes.org/${slug}`,
@@ -54,6 +58,7 @@ export default async function StatePage({ params }) {
   const { state: slug } = await params;
   const stateName = slugToState(slug);
   if (!stateName) notFound();
+
   const state = stateData[stateName];
 
   const breadcrumbLd = {
@@ -99,7 +104,7 @@ export default async function StatePage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
       />
-      <StateGuide stateName={stateName} state={state} slug={slug} />
+      <StateGuide stateName={stateName} state={state} />
       <StateFAQ stateName={stateName} state={state} />
     </article>
   );

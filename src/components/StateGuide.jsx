@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import USMap from "@/components/USMap";
 
 const tabs = [
@@ -28,20 +28,32 @@ function isVolatilePlaceholder(value) {
 /** Short badge label derived from the long voterIdType description. */
 function getVoterIdBadge(state) {
   if (!state.voterIdRequired) return "No ID required";
-  const t = state.voterIdType.toLowerCase();
-  if (t.includes("photo id")) return "Photo ID required";
-  if (t.includes("government-issued")) return "Gov't ID required";
+  const type = state.voterIdType.toLowerCase();
+  if (type.includes("photo id")) return "Photo ID required";
+  if (type.includes("government-issued")) return "Gov't ID required";
   return "ID required";
 }
 
 function getPocStatus(state) {
   if (state.currentPocLaw && state.pocImplemented) {
-    return { label: "Yes — Active", color: "text-danger", bgColor: "bg-danger/10 border-danger/20" };
+    return {
+      label: "Yes - Active",
+      color: "text-danger",
+      bgColor: "bg-danger/10 border-danger/20",
+    };
   }
   if (state.currentPocLaw && !state.pocImplemented) {
-    return { label: "On books — Not enforced", color: "text-warning", bgColor: "bg-warning/10 border-warning/20" };
+    return {
+      label: "On books - Not enforced",
+      color: "text-warning",
+      bgColor: "bg-warning/10 border-warning/20",
+    };
   }
-  return { label: "No current requirement", color: "text-success", bgColor: "bg-success/10 border-success/20" };
+  return {
+    label: "No current requirement",
+    color: "text-success",
+    bgColor: "bg-success/10 border-success/20",
+  };
 }
 
 function InfoBox({ label, value, icon }) {
@@ -56,26 +68,32 @@ function InfoBox({ label, value, icon }) {
   );
 }
 
-function RequirementsTab({ stateName, state }) {
+function RequirementsTab({ state }) {
   const poc = getPocStatus(state);
 
   return (
     <div className="space-y-8">
-      {/* Info grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <InfoBox label="Voter ID Requirement" value={state.voterIdType} />
-        <InfoBox label="Online Registration" value={state.onlineReg ? "Available" : "Not available"} />
-        <InfoBox label="Registration Deadline" value={state.registrationDeadline} />
+        <InfoBox
+          label="Online Registration"
+          value={state.onlineReg ? "Available" : "Not available"}
+        />
+        <InfoBox
+          label="Registration Deadline"
+          value={state.registrationDeadline}
+        />
         <InfoBox label="Proof of Citizenship Law" value={poc.label} />
       </div>
 
-      {/* State notes */}
       {state.notes && (
-        <div className={`rounded-xl border p-4 text-sm leading-relaxed ${
-          state.currentPocLaw
-            ? "bg-danger/5 border-danger/20 text-danger dark:text-danger-light"
-            : "bg-success/5 border-success/20 text-success dark:text-success-light"
-        }`}>
+        <div
+          className={`rounded-xl border p-4 text-sm leading-relaxed ${
+            state.currentPocLaw
+              ? "bg-danger/5 border-danger/20 text-danger dark:text-danger-light"
+              : "bg-success/5 border-success/20 text-success dark:text-success-light"
+          }`}
+        >
           <span className="font-bold font-mono text-xs uppercase tracking-wider block mb-1">
             Note
           </span>
@@ -83,7 +101,6 @@ function RequirementsTab({ stateName, state }) {
         </div>
       )}
 
-      {/* What to Do Now */}
       <div className="bg-accent/5 border border-accent/20 rounded-xl p-6">
         <h3 className="font-serif text-xl text-text mb-4">What to Do Now</h3>
         <ol className="space-y-3 text-sm text-text-secondary list-none">
@@ -92,11 +109,11 @@ function RequirementsTab({ stateName, state }) {
             "If your name has changed, get a passport in your current legal name",
             "Order your birth certificate now if you don't have one",
             "Verify your voter registration is current",
-            "Keep originals safe — the SAVE Act requires originals, not photocopies",
-          ].map((step, i) => (
-            <li key={i} className="flex gap-3">
+            "Keep originals safe - the SAVE Act requires originals, not photocopies",
+          ].map((step, index) => (
+            <li key={step} className="flex gap-3">
               <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center">
-                {i + 1}
+                {index + 1}
               </span>
               <span className="pt-0.5">{step}</span>
             </li>
@@ -114,7 +131,6 @@ function BirthCertTab({ stateName, state }) {
 
   return (
     <div className="space-y-8">
-      {/* Cost & time */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <InfoBox label="Birth Certificate Cost" value={state.birthCertCost} />
         <InfoBox label="Processing Time" value={state.birthCertTime} />
@@ -125,8 +141,8 @@ function BirthCertTab({ stateName, state }) {
           <span className="font-bold font-mono text-xs uppercase tracking-wider text-warning block mb-1">
             Verification Note
           </span>
-          Fee and timing details can change frequently. Confirm current details on the official state site before purchasing:
-          {" "}
+          Fee and timing details can change frequently. Confirm current details
+          on the official state site before purchasing:{" "}
           <a
             href={state.vitalRecordsUrl}
             target="_blank"
@@ -135,11 +151,11 @@ function BirthCertTab({ stateName, state }) {
           >
             {stateName} Vital Records
             <span className="sr-only">(opens in new tab)</span>
-          </a>.
+          </a>
+          .
         </div>
       )}
 
-      {/* How to order */}
       <div className="bg-surface-elevated border border-border rounded-xl p-6">
         <h3 className="font-serif text-xl text-text mb-4">
           How to Order in {stateName}
@@ -178,7 +194,8 @@ function BirthCertTab({ stateName, state }) {
               By Mail
             </h4>
             <p>
-              Download the application form from your state vital records website, fill it out, and mail with payment and a copy of your ID.
+              Download the application form from your state vital records
+              website, fill it out, and mail with payment and a copy of your ID.
             </p>
           </div>
           <div>
@@ -186,24 +203,27 @@ function BirthCertTab({ stateName, state }) {
               In Person
             </h4>
             <p>
-              Visit your county clerk or state vital records office with valid ID and payment. Same-day or next-day service may be available.
+              Visit your county clerk or state vital records office with valid
+              ID and payment. Same-day or next-day service may be available.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Tip */}
       <div className="bg-accent/5 border border-accent/20 rounded-xl p-4 text-sm text-text-secondary">
         <span className="font-bold font-mono text-xs uppercase tracking-wider text-accent block mb-1">
           Tip
         </span>
-        You must order your birth certificate from the state where you were born, not the state where you currently live. If you were born in {stateName}, use the link above. If you were born elsewhere, find your birth state on our{" "}
+        You must order your birth certificate from the state where you were
+        born, not the state where you currently live. If you were born in{" "}
+        {stateName}, use the link above. If you were born elsewhere, find your
+        birth state on our{" "}
         <Link href="/" className="text-accent hover:underline">
           home page
-        </Link>.
+        </Link>
+        .
       </div>
 
-      {/* Vital records link */}
       <a
         href={state.vitalRecordsUrl}
         target="_blank"
@@ -212,7 +232,22 @@ function BirthCertTab({ stateName, state }) {
       >
         Visit {stateName} Vital Records Office
         <span className="sr-only">(opens in new tab)</span>
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
       </a>
     </div>
   );
@@ -229,7 +264,23 @@ function ResourceCard({ href, title, description }) {
       <h4 className="text-sm font-semibold text-text group-hover:text-accent transition-colors mb-1">
         {title}
         <span className="sr-only">(opens in new tab)</span>
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="inline ml-1.5 opacity-50"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="inline ml-1.5 opacity-50"
+        >
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+          <polyline points="15 3 21 3 21 9" />
+          <line x1="10" y1="14" x2="21" y2="3" />
+        </svg>
       </h4>
       <p className="text-xs text-text-muted">{description}</p>
     </a>
@@ -243,7 +294,6 @@ function ResourcesTab({ stateName, state }) {
 
   return (
     <div className="space-y-8">
-      {/* State resources */}
       <div>
         <h3 className="font-serif text-xl text-text mb-4">
           {stateName} Resources
@@ -262,7 +312,6 @@ function ResourcesTab({ stateName, state }) {
         </div>
       </div>
 
-      {/* Federal resources */}
       <div>
         <h3 className="font-serif text-xl text-text mb-4">
           Federal Resources
@@ -276,7 +325,7 @@ function ResourcesTab({ stateName, state }) {
           <ResourceCard
             href="https://travel.state.gov/content/travel/en/passports.html"
             title="U.S. Passports"
-            description="Apply for or renew a U.S. passport — accepted as proof of citizenship everywhere."
+            description="Apply for or renew a U.S. passport - accepted as proof of citizenship everywhere."
           />
           <ResourceCard
             href="https://vote.gov/"
@@ -297,11 +346,11 @@ function ResourcesTab({ stateName, state }) {
             Verification Sources
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {verificationSources.slice(0, 6).map((href, i) => (
+            {verificationSources.slice(0, 6).map((href, index) => (
               <ResourceCard
-                key={`${href}-${i}`}
+                key={`${href}-${index}`}
                 href={href}
-                title={`Source ${i + 1}`}
+                title={`Source ${index + 1}`}
                 description={href}
               />
             ))}
@@ -309,13 +358,13 @@ function ResourcesTab({ stateName, state }) {
         </div>
       )}
 
-      {/* Take Action */}
       <div className="bg-surface-elevated border border-border rounded-xl p-6">
         <h3 className="font-serif text-xl text-text mb-3">
           Contact Your Senators
         </h3>
         <p className="text-sm text-text-secondary mb-4">
-          Let your senators know how you feel about the SAVE Act and voter access in {stateName}.
+          Let your senators know how you feel about the SAVE Act and voter
+          access in {stateName}.
         </p>
         <div className="flex flex-wrap gap-3">
           <a
@@ -326,7 +375,22 @@ function ResourcesTab({ stateName, state }) {
           >
             Find Your Senators
             <span className="sr-only">(opens in new tab)</span>
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
           </a>
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-alt text-text-secondary font-mono text-sm border border-border">
             Capitol Switchboard: (202) 224-3121
@@ -337,27 +401,42 @@ function ResourcesTab({ stateName, state }) {
   );
 }
 
-const tabVariants = {
-  enter: { opacity: 0, y: 8 },
-  center: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -8 },
-};
+function TabPanel({ id, isActive, shouldReduceMotion, children }) {
+  return (
+    <motion.div
+      id={`panel-${id}`}
+      role="tabpanel"
+      aria-labelledby={id}
+      hidden={!isActive}
+      initial={false}
+      animate={
+        shouldReduceMotion
+          ? { opacity: 1, y: 0 }
+          : { opacity: isActive ? 1 : 0, y: isActive ? 0 : 8 }
+      }
+      transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
+      className={isActive ? "block" : "hidden"}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
-export default function StateGuide({ stateName, state, slug }) {
+export default function StateGuide({ stateName, state }) {
   const [activeTab, setActiveTab] = useState("requirements");
   const shouldReduceMotion = useReducedMotion();
   const poc = getPocStatus(state);
 
-  const handleTabKeyDown = (e) => {
-    const tabIds = tabs.map((t) => t.id);
+  const handleTabKeyDown = (event) => {
+    const tabIds = tabs.map((tab) => tab.id);
     const currentIndex = tabIds.indexOf(activeTab);
     let newIndex = currentIndex;
 
-    if (e.key === "ArrowRight") {
-      e.preventDefault();
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
       newIndex = (currentIndex + 1) % tabIds.length;
-    } else if (e.key === "ArrowLeft") {
-      e.preventDefault();
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
       newIndex = (currentIndex - 1 + tabIds.length) % tabIds.length;
     } else {
       return;
@@ -369,7 +448,6 @@ export default function StateGuide({ stateName, state, slug }) {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
-      {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex items-center gap-2 text-sm text-text-muted">
           <li>
@@ -382,16 +460,22 @@ export default function StateGuide({ stateName, state, slug }) {
         </ol>
       </nav>
 
-      {/* Header */}
       <header className="mb-8">
         <div className="font-mono text-sm font-bold tracking-widest text-accent uppercase mb-2">
           {state.abbr}
         </div>
         <h1 className="font-serif text-[clamp(32px,5vw,52px)] leading-tight text-text mb-4">
-          {stateName}
+          {stateName} Voter Registration Guide
         </h1>
+        <p className="max-w-2xl text-text-secondary text-base leading-relaxed mb-4">
+          Current voter registration requirements, birth certificate ordering
+          information, voter ID rules, deadlines, and official election office
+          links for {stateName}.
+        </p>
         <div className="flex flex-wrap gap-2">
-          <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold border ${poc.bgColor} ${poc.color}`}>
+          <span
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold border ${poc.bgColor} ${poc.color}`}
+          >
             {state.currentPocLaw && state.pocImplemented && (
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-danger opacity-75" />
@@ -406,14 +490,16 @@ export default function StateGuide({ stateName, state, slug }) {
         </div>
       </header>
 
-      {/* Mini map */}
       <div className="max-w-md mx-auto mb-10">
         <USMap highlight={stateName} />
       </div>
 
-      {/* Tabs */}
       <div className="mb-8">
-        <div className="flex border-b border-border gap-1" role="tablist" aria-label="State guide sections">
+        <div
+          className="flex border-b border-border gap-1"
+          role="tablist"
+          aria-label="State guide sections"
+        >
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -435,7 +521,11 @@ export default function StateGuide({ stateName, state, slug }) {
                 <motion.div
                   layoutId="activeTab"
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
-                  transition={shouldReduceMotion ? { duration: 0 } : { type: "spring", stiffness: 400, damping: 30 }}
+                  transition={
+                    shouldReduceMotion
+                      ? { duration: 0 }
+                      : { type: "spring", stiffness: 400, damping: 30 }
+                  }
                 />
               )}
             </button>
@@ -443,29 +533,27 @@ export default function StateGuide({ stateName, state, slug }) {
         </div>
 
         <div className="pt-6">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              id={`panel-${activeTab}`}
-              role="tabpanel"
-              aria-labelledby={activeTab}
-              variants={shouldReduceMotion ? undefined : tabVariants}
-              initial={shouldReduceMotion ? false : "enter"}
-              animate="center"
-              exit={shouldReduceMotion ? undefined : "exit"}
-              transition={{ duration: 0.2 }}
-            >
-              {activeTab === "requirements" && (
-                <RequirementsTab stateName={stateName} state={state} />
-              )}
-              {activeTab === "birthcert" && (
-                <BirthCertTab stateName={stateName} state={state} />
-              )}
-              {activeTab === "resources" && (
-                <ResourcesTab stateName={stateName} state={state} />
-              )}
-            </motion.div>
-          </AnimatePresence>
+          <TabPanel
+            id="requirements"
+            isActive={activeTab === "requirements"}
+            shouldReduceMotion={shouldReduceMotion}
+          >
+            <RequirementsTab state={state} />
+          </TabPanel>
+          <TabPanel
+            id="birthcert"
+            isActive={activeTab === "birthcert"}
+            shouldReduceMotion={shouldReduceMotion}
+          >
+            <BirthCertTab stateName={stateName} state={state} />
+          </TabPanel>
+          <TabPanel
+            id="resources"
+            isActive={activeTab === "resources"}
+            shouldReduceMotion={shouldReduceMotion}
+          >
+            <ResourcesTab stateName={stateName} state={state} />
+          </TabPanel>
         </div>
       </div>
     </div>
