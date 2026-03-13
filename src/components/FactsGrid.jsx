@@ -41,9 +41,9 @@ const facts = [
       "https://www.pewresearch.org/short-reads/2023/09/07/about-eight-in-ten-women-in-opposite-sex-marriages-say-they-took-their-husbands-last-name/",
   },
   {
-    stat: "~4",
+    stat: "~5",
     label: "States with active documentary proof-of-citizenship rules (estimate)",
-    sub: "As of Mar 13, 2026: AZ, NH, OH (BMV only), WY active; GA, IN, TN conditional; FL, SD, UT newly passed (not yet implemented)",
+    sub: "As of Mar 13, 2026: AZ, IA, NH, OH (BMV only), WY active; GA, IN, TN conditional; FL, SD, UT newly passed (not yet implemented)",
     source: "NCSL",
     sourceUrl:
       "https://www.ncsl.org/elections-and-campaigns/legislative-approaches-to-ensuring-only-citizens-vote",
